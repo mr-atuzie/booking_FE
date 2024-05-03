@@ -36,7 +36,7 @@ const Account = () => {
 
   const logout = async () => {
     try {
-      await axios.post("/api/v1/user/logout");
+      await axios.post("/user/logout");
       setRedirect("/");
       setUser(null);
     } catch (error) {

@@ -1,17 +1,18 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      const res = await axios.post("api/v1/user/register", {
+      const res = await axios.post("/user/register", {
         name,
         email,
         password,
@@ -19,6 +20,7 @@ const RegisterPage = () => {
 
       toast.success("Registration successful");
       console.log(res.data);
+      setRedirect(true);
     } catch (error) {
       const message =
         (error.response &&
@@ -31,6 +33,10 @@ const RegisterPage = () => {
       console.log(error);
     }
   };
+
+  if (redirect) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <div className=" mt-4 grow flex items-center justify-center">
       <div className="  mb-64">
