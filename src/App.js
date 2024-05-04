@@ -3,12 +3,12 @@ import IndexPage from "./pages/IndexPage";
 import LoginPage from "./pages/LoginPage";
 import Layout from "./Layout";
 import RegisterPage from "./pages/RegisterPage";
-// import axios from "axios";
+import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import Account from "./pages/Account";
 
 // axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URI;
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 
 // const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 // export const API_URL = `${BACKEND_URL}/api/v1/users/`;
