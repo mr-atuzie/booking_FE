@@ -7,7 +7,7 @@ import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import Account from "./pages/Account";
 
-// axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URI;
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URI;
 axios.defaults.withCredentials = true;
 
 // const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;

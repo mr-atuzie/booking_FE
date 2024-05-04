@@ -12,7 +12,7 @@ export function UserContextProvider({ children }) {
     if (!user) {
       console.log(process.env.REACT_APP_BACKEND_URI);
       axios
-        .get("https://booking-be-11qh.onrender.com/api/v1/user/profile")
+        .get("/api/v1/user/profile")
         .then(({ data }) => {
           setUser(data);
           setReady(true);
