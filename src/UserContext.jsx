@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { API_URL } from "./App";
 
 export const UserContext = createContext({});
 
@@ -11,7 +12,7 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     if (!user) {
       axios
-        .get("/api/v1/user/profile")
+        .get(API_URL + "profile")
         .then(({ data }) => {
           setUser(data);
           setReady(true);

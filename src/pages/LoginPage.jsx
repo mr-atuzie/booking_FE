@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import { API_URL } from "../App";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ const LoginPage = () => {
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      const { data } = await axios.post("/api/v1/user/login", {
+      const { data } = await axios.post(API_URL + "login", {
         email,
         password,
       });

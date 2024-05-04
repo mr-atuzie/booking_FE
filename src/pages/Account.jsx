@@ -5,6 +5,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import PlacesPage from "./PlacesPage";
+import { API_URL } from "../App";
 
 const Account = () => {
   const { subpage } = useParams();
@@ -36,7 +37,7 @@ const Account = () => {
 
   const logout = async () => {
     try {
-      await axios.post("/api/v1/user/logout");
+      await axios.post(API_URL + "logout");
       setRedirect("/");
       setUser(null);
     } catch (error) {

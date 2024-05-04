@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, Navigate } from "react-router-dom";
+import { API_URL } from "../App";
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
@@ -12,7 +13,7 @@ const RegisterPage = () => {
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      const res = await axios.post("/api/v1/user/register", {
+      const res = await axios.post(API_URL + "register", {
         name,
         email,
         password,
