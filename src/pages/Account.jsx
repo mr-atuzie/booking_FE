@@ -5,7 +5,6 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import PlacesPage from "./PlacesPage";
-import { API_URL } from "../App";
 
 const Account = () => {
   const { subpage } = useParams();
@@ -19,7 +18,9 @@ const Account = () => {
   }
 
   if (ready && !user && !redirect) {
-    return <Navigate to={"/login"} />;
+    return (
+      <Navigate to={"https://booking-be-11qh.onrender.com/api/v1/user/login"} />
+    );
   }
 
   function activeLink(type = null) {
@@ -37,7 +38,9 @@ const Account = () => {
 
   const logout = async () => {
     try {
-      await axios.post(API_URL + "logout");
+      await axios.post(
+        "https://booking-be-11qh.onrender.com/api/v1/user/logout"
+      );
       setRedirect("/");
       setUser(null);
     } catch (error) {

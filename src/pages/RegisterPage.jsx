@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, Navigate } from "react-router-dom";
-import { API_URL } from "../App";
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
@@ -13,11 +12,14 @@ const RegisterPage = () => {
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      const res = await axios.post(API_URL + "register", {
-        name,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://booking-be-11qh.onrender.com/api/v1/user/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
 
       toast.success("Registration successful");
       console.log(res.data);

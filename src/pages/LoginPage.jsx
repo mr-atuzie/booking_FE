@@ -3,7 +3,6 @@ import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
-import { API_URL } from "../App";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -14,13 +13,17 @@ const LoginPage = () => {
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
+    console.log(process.env.REACT_APP_BACKEND_URI);
     try {
-      const { data } = await axios.post(API_URL + "login", {
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        "https://booking-be-11qh.onrender.com/api/v1/user/login",
+        {
+          email,
+          password,
+        }
+      );
 
-      console.log(API_URL);
+      console.log(process.env.REACT_APP_BACKEND_URI);
 
       setUser(data);
       toast.success("Login successful");

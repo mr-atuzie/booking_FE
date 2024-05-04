@@ -1,7 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { API_URL } from "./App";
 
 export const UserContext = createContext({});
 
@@ -11,8 +10,9 @@ export function UserContextProvider({ children }) {
 
   useEffect(() => {
     if (!user) {
+      console.log(process.env.REACT_APP_BACKEND_URI);
       axios
-        .get(API_URL + "profile")
+        .get("https://booking-be-11qh.onrender.com/api/v1/user/profile")
         .then(({ data }) => {
           setUser(data);
           setReady(true);
