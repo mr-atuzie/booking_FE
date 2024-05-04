@@ -20,6 +20,8 @@ const LoginPage = () => {
         password,
       });
 
+      console.log(API_URL);
+
       setUser(data);
       toast.success("Login successful");
       setRedirect(true);
