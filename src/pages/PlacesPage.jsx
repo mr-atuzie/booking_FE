@@ -62,7 +62,7 @@ const PlacesPage = () => {
                 type="text"
                 placeholder="Add using a link...jpg"
               />
-              <button className=" bg-gray-200 text-sm lg:text-base px-2 lg:px-4 rounded-2xl">
+              <button className=" bg-gray-200 text-xs lg:text-base px-2 lg:px-4 rounded-2xl">
                 Add&nbsp;photo
               </button>
             </div>
