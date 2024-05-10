@@ -13,17 +13,11 @@ const LoginPage = () => {
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    console.log(process.env.REACT_APP_BACKEND_URI);
     try {
-      const { data } = await axios.post(
-        "https://booking-be-11qh.onrender.com/api/v1/user/login",
-        {
-          email,
-          password,
-        }
-      );
-
-      console.log(process.env.REACT_APP_BACKEND_URI);
+      const { data } = await axios.post("/api/v1/user/login", {
+        email,
+        password,
+      });
 
       setUser(data);
       toast.success("Login successful");

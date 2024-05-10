@@ -10,7 +10,6 @@ export function UserContextProvider({ children }) {
 
   useEffect(() => {
     if (!user) {
-      console.log(process.env.REACT_APP_BACKEND_URI);
       axios
         .get("/api/v1/user/profile")
         .then(({ data }) => {

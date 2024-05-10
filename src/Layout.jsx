@@ -4,11 +4,9 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className=" w-[95%] mx-auto">
-        <Header />
-        <Outlet />
-      </div>
+    <div className="flex p-4 flex-col min-h-screen">
+      <Header />
+      <Outlet />
     </div>
   );
 };

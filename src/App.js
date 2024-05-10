@@ -6,14 +6,12 @@ import RegisterPage from "./pages/RegisterPage";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import Account from "./pages/Account";
+import PlacesPage from "./pages/PlacesPage";
+import PlacesFormPage from "./pages/PlacesFormPage";
+import PlacePage from "./pages/PlacePage";
 
 axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URI;
 axios.defaults.withCredentials = true;
-
-// const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-// export const API_URL = `${BACKEND_URL}/api/v1/users/`;
-
-// console.log(process.env.REACT_APP_BACKEND_URI);
 
 function App() {
   return (
@@ -24,8 +22,11 @@ function App() {
           <Route index element={<IndexPage />}></Route>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/account/:subpage?" element={<Account />} />
-          <Route path="/account/:subpage/:action" element={<Account />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/account/places" element={<PlacesPage />} />
+          <Route path="/account/places/new" element={<PlacesFormPage />} />
+          <Route path="/account/places/:id" element={<PlacesFormPage />} />
+          <Route path="/place/:id" element={<PlacePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -12,14 +12,11 @@ const RegisterPage = () => {
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      const res = await axios.post(
-        "https://booking-be-11qh.onrender.com/api/v1/user/register",
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      const res = await axios.post("/api/v1/user/register", {
+        name,
+        email,
+        password,
+      });
 
       toast.success("Registration successful");
       console.log(res.data);
