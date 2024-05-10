@@ -9,7 +9,7 @@ const IndexPage = () => {
     axios
       .get("/api/v1/places/")
       .then(({ data }) => {
-        setPlaces([...data, ...data, ...data]);
+        setPlaces(data);
       })
       .catch((error) => {
         const message =

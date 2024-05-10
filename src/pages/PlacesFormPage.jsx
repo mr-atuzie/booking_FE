@@ -111,6 +111,8 @@ const PlacesFormPage = () => {
       setAddedPhotos((prev) => {
         return [...prev, ...filenames];
       });
+
+      console.log(filenames);
     } catch (error) {
       const message =
         (error.response &&

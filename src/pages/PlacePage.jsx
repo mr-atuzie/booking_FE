@@ -188,9 +188,25 @@ const PlacePage = () => {
           Max number of guests: {place.maxGuests}
         </div>
 
-        <div className=" bg-gray-200 shadow p-4 rounded-2xl ">
+        <div className=" shadow p-4 rounded-2xl ">
           <h1 className=" text-center "> Price: ${place.price}/per night</h1>
-          <button className="primary text-sm">Book this place</button>
+          <div className=" border rounded-2xl mt-4">
+            <div className="flex">
+              <div className="  p-3">
+                <label className=" text-sm">Check in:</label>
+                <input type="date" name="" id="" />
+              </div>
+              <div className=" p-3 border-l">
+                <label className="text-sm">Check out:</label>
+                <input type="date" name="" id="" />
+              </div>
+            </div>
+            <div className="  p-3 border-t">
+              <label className=" text-sm">Number of guests</label>
+              <input type="number" />
+            </div>
+          </div>
+          <button className="primary text-sm mt-4">Book this place</button>
         </div>
       </div>
     </div>
