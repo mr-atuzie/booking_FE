@@ -23,10 +23,13 @@ const IndexPage = () => {
         console.log(error);
       });
   }, []);
+
+  console.log(places);
   return (
     <div className="mt-4 lg:mt-8 gap-3 lg:gap-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {places.length > 0 &&
         places.map((place, index) => {
+          console.log(place);
           return (
             <Link to={"/place/" + place._id} key={index}>
               <div className=" bg-gray-500 mb-2 rounded-2xl flex">
