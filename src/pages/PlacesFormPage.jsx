@@ -107,6 +107,7 @@ const PlacesFormPage = () => {
     console.log("started");
     console.log(url);
     console.log(process.env.REACT_APP_BACKEND_URI);
+    console.log(process.env.REACT_APP_CLOUD_URL);
 
     // try {
     //   const files = ev.target.files;
