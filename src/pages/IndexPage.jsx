@@ -42,7 +42,7 @@ const IndexPage = () => {
                 )}
               </div>
               <h2 className="text-sm font-medium leading-4 truncate">
-                {shortenText(place.title, 25)}
+                {shortenText(place.title, 35)}
               </h2>
               <p className=" text-xs    capitalize my-1 ">{place.address}</p>
               <div className=" text-sm ">
