@@ -177,7 +177,7 @@ const PlacePage = () => {
           night
         </h1>
 
-        <div className=" border rounded-2xl mt-4">
+        <div className="w-[90%] mx-auto border rounded-2xl mt-4">
           <div className="flex">
             <div className=" p-2 ">
               <label className=" text-sm font-medium">Check in:</label>
