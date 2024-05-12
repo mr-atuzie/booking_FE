@@ -106,11 +106,6 @@ const PlacesFormPage = () => {
 
     console.log("started");
 
-    console.log(process.env.REACT_APP_BACKEND_URI);
-    console.log(process.env.REACT_APP_CLOUD_URL);
-    console.log(process.env.REACT_APP_CLOUD_NAME);
-    console.log(process.env.REACT_APP_UPLOAD_PRESET);
-
     try {
       const files = ev.target.files;
       const dataDoc = new FormData();
