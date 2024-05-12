@@ -5,7 +5,6 @@ import { UserContext } from "../UserContext";
 const Header = () => {
   const { user } = useContext(UserContext);
 
-  console.log(user);
   return (
     <header className="  flex justify-between">
       <Link to={"/"} className="flex items-center gap-1" href="/">

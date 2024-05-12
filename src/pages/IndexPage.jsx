@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { shortenText } from "../utils";
 
 const IndexPage = () => {
   const [places, setPlaces] = useState([]);
@@ -41,7 +42,7 @@ const IndexPage = () => {
                 )}
               </div>
               <h2 className="text-sm font-medium leading-4 truncate">
-                {place.title}
+                {shortenText(place.title, 25)}
               </h2>
               <p className=" text-xs    capitalize my-1 ">{place.address}</p>
               <div className=" text-sm ">

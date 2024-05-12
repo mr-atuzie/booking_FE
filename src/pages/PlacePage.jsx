@@ -170,20 +170,20 @@ const PlacePage = () => {
           Max number of guests: {place.maxGuests}
         </div>
 
-        <div className=" shadow-sm rounded-2xl">
+        <div className=" lg:shadow-sm p-2 lg:rounded-2xl">
           <h1 className=" text-center "> Price: ${place.price}/per night</h1>
           <div className=" border rounded-2xl mt-4">
             <div className="flex">
-              <div className=" ">
+              <div className=" p-1 ">
                 <label className=" text-sm">Check in:</label>
                 <input type="date" name="" id="" />
               </div>
-              <div className="  border-l">
+              <div className=" p-1  border-l">
                 <label className="text-sm">Check out:</label>
                 <input type="date" name="" id="" />
               </div>
             </div>
-            <div className="border-t">
+            <div className="border-t p-1">
               <label className=" text-sm">Number of guests</label>
               <input type="number" />
             </div>
