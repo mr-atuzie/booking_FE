@@ -5,8 +5,8 @@ import { Navigate, useParams } from "react-router-dom";
 import Perks from "../components/Perks";
 import AccountNav from "../components/AccountNav";
 
-const cloud_name = process.env.REACT_APP_CLOUD_NAME;
-const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
+// const cloud_name = process.env.REACT_APP_CLOUD_NAME;
+// const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
 const url = process.env.REACT_APP_CLOUD_URL;
 
 const PlacesFormPage = () => {
@@ -102,39 +102,40 @@ const PlacesFormPage = () => {
   async function uploadPhoto(ev) {
     ev.preventDefault();
 
-    let uploadFiles = [];
+    // let uploadFiles = [];
 
     console.log("started");
+    console.log(url);
 
-    try {
-      const files = ev.target.files;
-      const dataDoc = new FormData();
+    // try {
+    //   const files = ev.target.files;
+    //   const dataDoc = new FormData();
 
-      for (let i = 0; i < files.length; i++) {
-        dataDoc.append("file", files[i]);
-        dataDoc.append("cloud_name", cloud_name);
-        dataDoc.append("upload_preset", upload_preset);
+    //   for (let i = 0; i < files.length; i++) {
+    //     dataDoc.append("file", files[i]);
+    //     dataDoc.append("cloud_name", cloud_name);
+    //     dataDoc.append("upload_preset", upload_preset);
 
-        const res = await fetch(url, { method: "post", body: dataDoc });
-        const imageData = await res.json();
+    //     const res = await fetch(url, { method: "post", body: dataDoc });
+    //     const imageData = await res.json();
 
-        uploadFiles.push(imageData.secure_url.toString());
-      }
+    //     uploadFiles.push(imageData.secure_url.toString());
+    //   }
 
-      setAddedPhotos((prev) => {
-        return [...prev, ...uploadFiles];
-      });
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
+    //   setAddedPhotos((prev) => {
+    //     return [...prev, ...uploadFiles];
+    //   });
+    // } catch (error) {
+    //   // const message =
+    //   //   (error.response &&
+    //   //     error.response.data &&
+    //   //     error.response.data.message) ||
+    //   //   error.message ||
+    //   //   error.toString();
 
-      console.log(error);
-      toast.error(message);
-    }
+    //   console.log(error);
+    //   // toast.error(message);
+    // }
   }
 
   async function savePlace(ev) {
