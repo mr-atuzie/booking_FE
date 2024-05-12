@@ -163,11 +163,14 @@ const PlacePage = () => {
         <h2 className=" font-medium">Description</h2>
         <p className=" text-sm">{place.description}</p>
       </div>
-      <div className=" grid  lg:grid-cols-2">
+      <div className=" grid gap-2  lg:grid-cols-2">
         <div className=" text-sm">
-          Check-in: {place.checkIn} <br />
-          Check-out: {place.checkOut} <br />
-          Max number of guests: {place.maxGuests}
+          <span className=" font-semibold">Check in:</span> {place.checkIn} AM
+          <br />
+          <span className=" font-semibold">Check out:</span> {place.checkOut} PM
+          <br />
+          <span className=" font-semibold">Max number of guests:</span>{" "}
+          {place.maxGuests}
         </div>
 
         <div className=" shadow-sm shadow-gray-500  py-4  px-2 rounded-2xl">
@@ -178,17 +181,27 @@ const PlacePage = () => {
           <div className=" border rounded-2xl mt-4">
             <div className="flex">
               <div className=" p-2 ">
-                <label className=" text-xs font-medium">Check in:</label>
-                <input className=" text-sm" type="date" name="" id="" />
+                <label className=" text-sm font-medium">Check in:</label>
+                <input
+                  className=" text-xs"
+                  type="datetime-local"
+                  name=""
+                  id=""
+                />
               </div>
               <div className=" p-2  border-l">
-                <label className="text-xs font-medium">Check out:</label>
-                <input className=" text-sm" type="date" name="" id="" />
+                <label className="text-sm font-medium">Check out:</label>
+                <input
+                  className=" text-xs"
+                  type="datetime-local"
+                  name=""
+                  id=""
+                />
               </div>
             </div>
             <div className="border-t p-2">
-              <label className=" text-xs font-medium">Number of guests</label>
-              <input className=" text-sm" type="number" />
+              <label className=" text-sm font-medium">Number of guests</label>
+              <input className=" text-xs" type="number" />
             </div>
           </div>
           <button className="primary text-sm mt-4">Book this place</button>
