@@ -24,7 +24,6 @@ const IndexPage = () => {
       });
   }, []);
 
-  console.log(places);
   return (
     <div className="mt-4 lg:mt-8 gap-3 lg:gap-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {places.length > 0 &&
@@ -36,23 +35,18 @@ const IndexPage = () => {
                 {place.photos?.[0] && (
                   <img
                     className="rounded-2xl object-cover aspect-square "
-                    src={
-                      process.env.REACT_APP_BACKEND_URI +
-                      "/uploads/" +
-                      place.photos[0]
-                    }
+                    src={place.photos[0]}
                     alt=""
                   />
                 )}
               </div>
-              <p className=" text-xs font-medium  capitalize ">
-                {place.address}
-              </p>
-              <h2 className="text-sm truncate font-medium  text-gray-600 ">
+              <h2 className="text-sm font-medium leading-4 truncate">
                 {place.title}
               </h2>
-              <div className=" text-sm mt-1">
-                <span className=" font-bold"> ${place.price}</span> per night
+              <p className=" text-xs    capitalize my-1 ">{place.address}</p>
+              <div className=" text-sm ">
+                <span className=" font-semibold"> ${place.price}</span> per
+                night
               </div>
             </Link>
           );

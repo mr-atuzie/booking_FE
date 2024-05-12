@@ -1,9 +1,11 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, Navigate } from "react-router-dom";
+import { UserContext } from "../UserContext";
 
 const RegisterPage = () => {
+  const { setUser } = useContext(UserContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,14 +14,15 @@ const RegisterPage = () => {
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      const res = await axios.post("/api/v1/user/register", {
+      const { data } = await axios.post("/api/v1/user/register", {
         name,
         email,
         password,
       });
 
+      setUser(data);
       toast.success("Registration successful");
-      console.log(res.data);
+      console.log(data);
       setRedirect(true);
     } catch (error) {
       const message =

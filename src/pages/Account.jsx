@@ -9,25 +9,15 @@ import AccountNav from "../components/AccountNav";
 
 const Account = () => {
   const { subpage } = useParams();
-
   const { user, ready, setUser } = useContext(UserContext);
-
   const [redirect, setRedirect] = useState(null);
-
-  if (!ready) {
-    return "Loading";
-  }
-
-  if (ready && !user && !redirect) {
-    return <Navigate to={"/login"} />;
-  }
 
   const logout = async () => {
     try {
-      const { data } = await axios.post("/api/v1/user/logout");
+      const { data } = await axios.get("/api/v1/user/logout");
+      setRedirect("/");
       setUser(null);
       console.log(data);
-      setRedirect("/");
     } catch (error) {
       const message =
         (error.response &&
@@ -40,6 +30,14 @@ const Account = () => {
       console.log(error);
     }
   };
+
+  if (!ready) {
+    return "Loading";
+  }
+
+  if (ready && !user && !redirect) {
+    return <Navigate to={"/login"} />;
+  }
 
   if (redirect) {
     return <Navigate to={redirect} />;

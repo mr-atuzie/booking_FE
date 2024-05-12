@@ -5,12 +5,16 @@ import { Navigate, useParams } from "react-router-dom";
 import Perks from "../components/Perks";
 import AccountNav from "../components/AccountNav";
 
+const cloud_name = process.env.REACT_APP_CLOUD_NAME;
+const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
+const url = process.env.REACT_APP_CLOUD_URL;
+
 const PlacesFormPage = () => {
   const { id } = useParams();
 
   const [title, setTitle] = useState("");
   const [address, setAddress] = useState("");
-  const [photoLink, setPhotoLink] = useState("");
+  // const [photoLink, setPhotoLink] = useState("");
   const [price, setPrice] = useState(100);
   const [addedPhotos, setAddedPhotos] = useState([]);
   const [description, setDescription] = useState("");
@@ -69,50 +73,57 @@ const PlacesFormPage = () => {
     );
   };
 
-  async function addPhotoByLink(ev) {
-    ev.preventDefault();
-    try {
-      const { data: filename } = await axios.post("/upload-by-link", {
-        link: photoLink,
-      });
+  // async function addPhotoByLink(ev) {
+  //   ev.preventDefault();
+  //   try {
+  //     const { data: filename } = await axios.post("/upload-by-link", {
+  //       link: photoLink,
+  //     });
 
-      console.log(filename);
+  //     console.log(filename);
 
-      setAddedPhotos((prev) => {
-        return [...prev, filename];
-      });
-      setPhotoLink("");
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
+  //     setAddedPhotos((prev) => {
+  //       return [...prev, filename];
+  //     });
+  //     setPhotoLink("");
+  //   } catch (error) {
+  //     const message =
+  //       (error.response &&
+  //         error.response.data &&
+  //         error.response.data.message) ||
+  //       error.message ||
+  //       error.toString();
 
-      toast.error(message);
-      console.log(error);
-    }
-  }
+  //     toast.error(message);
+  //     console.log(error);
+  //   }
+  // }
 
   async function uploadPhoto(ev) {
+    ev.preventDefault();
+
+    let uploadFiles = [];
+
+    console.log("started");
+
     try {
       const files = ev.target.files;
       const dataDoc = new FormData();
 
       for (let i = 0; i < files.length; i++) {
-        dataDoc.append("photos", files[i]);
+        dataDoc.append("file", files[i]);
+        dataDoc.append("cloud_name", cloud_name);
+        dataDoc.append("upload_preset", upload_preset);
+
+        const res = await fetch(url, { method: "post", body: dataDoc });
+        const imageData = await res.json();
+
+        uploadFiles.push(imageData.secure_url.toString());
       }
 
-      const { data: filenames } = await axios.post("/upload", dataDoc, {
-        headers: { "Content-type": "multipart/form-data" },
-      });
-
       setAddedPhotos((prev) => {
-        return [...prev, ...filenames];
+        return [...prev, ...uploadFiles];
       });
-
-      console.log(filenames);
     } catch (error) {
       const message =
         (error.response &&
@@ -232,7 +243,7 @@ const PlacesFormPage = () => {
         />
 
         {assembleInput("Photos", " more is better")}
-        <div className=" flex gap-2">
+        {/* <div className=" flex gap-2">
           <input
             className=" text-sm placeholder:text-sm placeholder:font-light"
             type="text"
@@ -246,7 +257,7 @@ const PlacesFormPage = () => {
           >
             Add&nbsp;photo
           </button>
-        </div>
+        </div> */}
 
         <div className=" grid gap-2 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 mt-2">
           {addedPhotos.length > 0 &&
@@ -255,7 +266,7 @@ const PlacesFormPage = () => {
                 <div className=" h-32 flex relative " key={index}>
                   <img
                     className=" w-full  object-cover rounded-2xl"
-                    src={process.env.REACT_APP_BACKEND_URI + "/uploads/" + link}
+                    src={link}
                     alt=""
                   />
                   <button

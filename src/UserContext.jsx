@@ -14,6 +14,7 @@ export function UserContextProvider({ children }) {
         .get("/api/v1/user/profile")
         .then(({ data }) => {
           setUser(data);
+          console.log(data);
           setReady(true);
         })
         .catch((error) => {
@@ -28,7 +29,7 @@ export function UserContextProvider({ children }) {
           console.log(error);
         });
     }
-  }, [user]);
+  }, [user, ready]);
 
   return (
     <UserContext.Provider value={{ user, setUser, ready }}>

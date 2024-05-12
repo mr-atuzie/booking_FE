@@ -61,18 +61,14 @@ const PlacesPage = () => {
             return (
               <Link
                 to={"/account/places/" + place._id}
-                className=" flex cursor-pointer mb-2 gap-2 lg:gap-4 bg-gray-100 p-4 rounded-2xl"
+                className=" flex cursor-pointer mb-2 gap-2 lg:gap-4 bg-gray-100 p-2 lg:p-4 rounded-2xl"
                 key={place._id}
               >
                 <div className=" h-32 w-32 flex  bg-gray-300 grow shrink-0 ">
                   {place.photos.length > 0 && (
                     <img
                       className=" object-cover"
-                      src={
-                        process.env.REACT_APP_BACKEND_URI +
-                        "/uploads/" +
-                        place.photos[0]
-                      }
+                      src={place.photos[0]}
                       alt=""
                     />
                   )}
@@ -82,8 +78,8 @@ const PlacesPage = () => {
                   <h2 className=" font-medium leading-4 capitalize text-sm lg:text-base">
                     {place.title}
                   </h2>
-                  <p className=" text-xs lg:hidden">
-                    {shortenText(place.description, 110)}
+                  <p className=" text-xs mt-1 lg:hidden">
+                    {shortenText(place.description, 150)}
                   </p>
 
                   <p className=" hidden lg:block text-sm">

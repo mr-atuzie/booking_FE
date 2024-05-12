@@ -63,13 +63,7 @@ const PlacePage = () => {
             place.photos.map((photo, index) => {
               return (
                 <div key={index}>
-                  <img
-                    className=" w-full object-cover"
-                    src={
-                      process.env.REACT_APP_BACKEND_URI + "/uploads/" + photo
-                    }
-                    alt=""
-                  />
+                  <img className=" w-full object-cover" src={photo} alt="" />
                 </div>
               );
             })}
@@ -119,11 +113,7 @@ const PlacePage = () => {
                 {place.photos?.[0] && (
                   <img
                     className=" object-cover aspect-square "
-                    src={
-                      process.env.REACT_APP_BACKEND_URI +
-                      "/uploads/" +
-                      place?.photos[0]
-                    }
+                    src={place?.photos[0]}
                     alt=""
                   />
                 )}
