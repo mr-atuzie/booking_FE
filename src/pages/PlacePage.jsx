@@ -177,33 +177,35 @@ const PlacePage = () => {
           night
         </h1>
 
-        <div className="w-[90%] mx-auto border rounded-2xl mt-4">
-          <div className="flex">
-            <div className=" p-2 ">
-              <label className=" text-sm font-medium">Check in:</label>
-              <input
-                className=" bg-gray-200 text-xs"
-                type="datetime-local"
-                name=""
-                id=""
-              />
+        <div className=" flex justify-center items-center flex-col w-full">
+          <div className=" border rounded-2xl mt-4">
+            <div className="flex">
+              <div className=" p-2 ">
+                <label className=" text-xs font-medium">Check in:</label>
+                <input
+                  className=" bg-gray-200 text-xs"
+                  type="datetime-local"
+                  name=""
+                  id=""
+                />
+              </div>
+              <div className=" p-2  border-l">
+                <label className="text-xs font-medium">Check out:</label>
+                <input
+                  className=" bg-gray-200 text-xs"
+                  type="datetime-local"
+                  name=""
+                  id=""
+                />
+              </div>
             </div>
-            <div className=" p-2  border-l">
-              <label className="text-sm font-medium">Check out:</label>
-              <input
-                className=" bg-gray-200 text-xs"
-                type="datetime-local"
-                name=""
-                id=""
-              />
+            <div className="border-t p-2">
+              <label className=" text-xs font-medium">Number of guests</label>
+              <input className=" text-xs" type="number" />
             </div>
           </div>
-          <div className="border-t p-2">
-            <label className=" text-sm font-medium">Number of guests</label>
-            <input className=" text-xs" type="number" />
-          </div>
+          <button className="primary text-sm mt-4">Book this place</button>
         </div>
-        <button className="primary text-sm mt-4">Book this place</button>
       </div>
     </div>
   );
