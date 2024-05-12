@@ -165,47 +165,45 @@ const PlacePage = () => {
       </div>
       <div className=" grid gap-2  lg:grid-cols-2">
         <div className=" text-sm">
-          <span className=" font-semibold">Check in:</span> {place.checkIn} AM
+          <span className=" font-medium">Check in:</span> {place.checkIn} AM
           <br />
-          <span className=" font-semibold">Check out:</span> {place.checkOut} PM
+          <span className=" font-medium">Check out:</span> {place.checkOut} PM
           <br />
-          <span className=" font-semibold">Max number of guests:</span>{" "}
+          <span className=" font-medium">Max number of guests:</span>{" "}
           {place.maxGuests}
         </div>
+        <h1 className=" text-sm ">
+          Price: <span className=" font-semibold"> ${place.price}</span>/per
+          night
+        </h1>
 
-        <div className=" shadow-sm shadow-gray-500  py-4  px-2 rounded-2xl">
-          <h1 className=" text-center  text-sm">
-            Price: <span className=" font-semibold"> ${place.price}</span>/per
-            night
-          </h1>
-          <div className=" border rounded-2xl mt-4">
-            <div className="flex">
-              <div className=" p-2 ">
-                <label className=" text-sm font-medium">Check in:</label>
-                <input
-                  className=" text-xs"
-                  type="datetime-local"
-                  name=""
-                  id=""
-                />
-              </div>
-              <div className=" p-2  border-l">
-                <label className="text-sm font-medium">Check out:</label>
-                <input
-                  className=" text-xs"
-                  type="datetime-local"
-                  name=""
-                  id=""
-                />
-              </div>
+        <div className=" border rounded-2xl mt-4">
+          <div className="flex">
+            <div className=" p-2 ">
+              <label className=" text-sm font-medium">Check in:</label>
+              <input
+                className=" bg-gray-200 text-xs"
+                type="datetime-local"
+                name=""
+                id=""
+              />
             </div>
-            <div className="border-t p-2">
-              <label className=" text-sm font-medium">Number of guests</label>
-              <input className=" text-xs" type="number" />
+            <div className=" p-2  border-l">
+              <label className="text-sm font-medium">Check out:</label>
+              <input
+                className=" bg-gray-200 text-xs"
+                type="datetime-local"
+                name=""
+                id=""
+              />
             </div>
           </div>
-          <button className="primary text-sm mt-4">Book this place</button>
+          <div className="border-t p-2">
+            <label className=" text-sm font-medium">Number of guests</label>
+            <input className=" text-xs" type="number" />
+          </div>
         </div>
+        <button className="primary text-sm mt-4">Book this place</button>
       </div>
     </div>
   );
