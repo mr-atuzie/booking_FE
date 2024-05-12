@@ -124,11 +124,7 @@ const PlacePage = () => {
             {place?.photos?.[1] && (
               <img
                 className="object-cover aspect-square "
-                src={
-                  process.env.REACT_APP_BACKEND_URI +
-                  "/uploads/" +
-                  place?.photos[1]
-                }
+                src={place?.photos[1]}
                 alt=""
               />
             )}
@@ -137,11 +133,7 @@ const PlacePage = () => {
               {place?.photos?.[2] && (
                 <img
                   className="object-cover aspect-square relative top-2 "
-                  src={
-                    process.env.REACT_APP_BACKEND_URI +
-                    "/uploads/" +
-                    place?.photos[2]
-                  }
+                  src={place?.photos[2]}
                   alt=""
                 />
               )}
