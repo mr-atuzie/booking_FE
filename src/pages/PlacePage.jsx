@@ -73,7 +73,7 @@ const PlacePage = () => {
   }
 
   return (
-    <div className="mt-4 lg:mt-8 lg:w-[65%] lg:mx-auto">
+    <div className="mt-4 mb-32 lg:mt-8 lg:w-[65%] lg:mx-auto">
       <h1 className="text-lg leading-5 font-medium lg:text-2xl">
         {place?.title}
       </h1>
@@ -180,7 +180,7 @@ const PlacePage = () => {
         <div className=" flex justify-center items-center flex-col w-full">
           <div className=" border rounded-2xl mt-4">
             <div className="flex">
-              <div className=" p-2 ">
+              <div className="  ">
                 <label className=" text-xs font-medium">Check in:</label>
                 <input
                   className=" bg-gray-200 text-xs"
@@ -189,7 +189,7 @@ const PlacePage = () => {
                   id=""
                 />
               </div>
-              <div className=" p-2  border-l">
+              <div className="  border-l">
                 <label className="text-xs font-medium">Check out:</label>
                 <input
                   className=" bg-gray-200 text-xs"
@@ -199,7 +199,7 @@ const PlacePage = () => {
                 />
               </div>
             </div>
-            <div className="border-t p-2">
+            <div className="border-t ">
               <label className=" text-xs font-medium">Number of guests</label>
               <input className=" text-xs" type="number" />
             </div>

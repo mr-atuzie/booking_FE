@@ -30,8 +30,23 @@ const MobileNav = () => {
         <span></span>
         <p className=" text-xs">Bookings</p>
       </div>
-      <div className=" flex flex-col justify-center items-center">
-        <span></span>
+      <div className=" flex flex-col gap-1 justify-center items-center">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="lg:w-6 lg:h-6 w-4 h-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+            />
+          </svg>
+        </span>
         <p className=" text-xs">Profile</p>
       </div>
     </div>
