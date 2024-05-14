@@ -35,7 +35,7 @@ const PlacesPage = () => {
       <div className="text-center">
         <Link
           className=" inline-flex gap-1 text-sm lg:text-base rounded-full  bg-primary text-white py-2 px-6"
-          to={"/account/places/new"}
+          to={"/add-place"}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,12 +55,12 @@ const PlacesPage = () => {
         </Link>
       </div>
 
-      <div className=" mt-4">
+      <div className=" mt-4 mb-32">
         {places.length > 0 &&
           places.map((place) => {
             return (
               <Link
-                to={"/account/places/" + place._id}
+                to={"/update-place/" + place._id}
                 className=" flex cursor-pointer mb-2 gap-2 lg:gap-4 bg-gray-100 p-2 lg:p-4 rounded-2xl"
                 key={place._id}
               >

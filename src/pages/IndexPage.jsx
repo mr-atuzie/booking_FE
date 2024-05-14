@@ -26,16 +26,15 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <div className="mt-4 lg:mt-8 gap-3 lg:gap-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+    <div className="mt-4 mb-32 lg:mt-8 gap-3 lg:gap-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {places.length > 0 &&
         places.map((place, index) => {
-          console.log(place);
           return (
             <Link to={"/place/" + place._id} key={index}>
               <div className=" bg-gray-500 mb-2 rounded-2xl flex">
                 {place.photos?.[0] && (
                   <img
-                    className="rounded-2xl object-cover aspect-square "
+                    className="rounded-2xl max-h-56 w-full object-cover aspect-square "
                     src={place.photos[0]}
                     alt=""
                   />

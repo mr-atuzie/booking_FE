@@ -5,10 +5,6 @@ import { Navigate, useParams } from "react-router-dom";
 import Perks from "../components/Perks";
 import AccountNav from "../components/AccountNav";
 
-// const cloud_name = process.env.REACT_APP_CLOUD_NAME;
-// const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
-// const url = process.env.REACT_APP_CLOUD_URL;
-
 const PlacesFormPage = () => {
   const { id } = useParams();
 

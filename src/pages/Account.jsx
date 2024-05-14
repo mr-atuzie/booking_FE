@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../UserContext";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
-import PlacesPage from "./PlacesPage";
+// import PlacesPage from "./PlacesPage";
 import AccountNav from "../components/AccountNav";
 
 const Account = () => {
-  const { subpage } = useParams();
+  // const { subpage } = useParams();
   const { user, ready, setUser } = useContext(UserContext);
   const [redirect, setRedirect] = useState(null);
 
@@ -46,18 +46,15 @@ const Account = () => {
   return (
     <div>
       <AccountNav />
-      {subpage === undefined && (
-        <div className=" text-center lg:max-w-lg mx-auto">
-          <p>
-            Logged in as {user?.name} {user?.email}
-            <button onClick={logout} className=" primary max-w-sm mt-2">
-              Logout
-            </button>
-          </p>
-        </div>
-      )}
 
-      {subpage === "places" && <PlacesPage />}
+      <div className=" text-center lg:max-w-lg mx-auto">
+        <p>
+          Logged in as {user?.name} {user?.email}
+          <button onClick={logout} className=" primary max-w-sm mt-2">
+            Logout
+          </button>
+        </p>
+      </div>
     </div>
   );
 };

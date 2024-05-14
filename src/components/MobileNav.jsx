@@ -29,7 +29,7 @@ const MobileNav = () => {
       </NavLink>
 
       <NavLink
-        to="/account/places/new"
+        to="/add-place"
         className={({ isActive }) => isActive && " text-primary"}
       >
         <div className=" flex flex-col justify-center gap-1 items-center">
@@ -54,10 +54,10 @@ const MobileNav = () => {
       </NavLink>
 
       <NavLink
-        to="/account/bookings"
+        to="/bookings"
         className={({ isActive }) => isActive && " text-primary"}
       >
-        <div className=" flex flex-col justify-center items-center">
+        <div className=" flex flex-col justify-center gap-1 items-center">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@ const MobileNav = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="lg:w-6 lg:h-6 w-4 h-4"
+              className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"

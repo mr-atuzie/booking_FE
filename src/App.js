@@ -20,14 +20,14 @@ function App() {
       <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<IndexPage />}></Route>
+          <Route index element={<IndexPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/account/places" element={<PlacesPage />} />
-          <Route path="/account/bookings" element={<BookingsPage />} />
-          <Route path="/account/places/new" element={<PlacesFormPage />} />
-          <Route path="/account/places/:id" element={<PlacesFormPage />} />
+          <Route path="/places" element={<PlacesPage />} />
+          <Route path="/bookings" element={<BookingsPage />} />
+          <Route path="/add-place" element={<PlacesFormPage />} />
+          <Route path="/update-place/:id" element={<PlacesFormPage />} />
           <Route path="/place/:id" element={<PlacePage />} />
         </Route>
       </Routes>

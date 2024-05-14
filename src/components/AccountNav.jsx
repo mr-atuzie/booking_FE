@@ -1,30 +1,25 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const AccountNav = () => {
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
 
-  let subpage = pathname.split("/")?.[2];
+  // let subpage = pathname.split("/")?.[2];
 
-  if (subpage === undefined) {
-    subpage = "profile";
-  }
+  // if (subpage === undefined) {
+  //   subpage = "profile";
+  // }
 
-  function activeLink(type = null) {
-    let classes =
-      "py-2 px-2 lg:px-6 text-sm text-nowrap lg:text-base inline-flex gap-1 items-center   rounded-full";
-
-    if (type === subpage) {
-      classes += " bg-primary text-white";
-    } else {
-      classes += " bg-gray-200";
-    }
-
-    return classes;
-  }
   return (
     <nav className=" w-full  flex  mt-8 mb-8 gap-2 items-center lg:gap-4 justify-center">
-      <Link className={activeLink("profile")} to={"/account"}>
+      <NavLink
+        to="/account"
+        className={({ isActive }) =>
+          `${
+            isActive && "  bg-primary text-white"
+          } py-2 px-2 lg:px-6 text-sm text-nowrap lg:text-base inline-flex gap-1 items-center  bg-gray-200  rounded-full`
+        }
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -40,8 +35,16 @@ const AccountNav = () => {
           />
         </svg>
         My profile
-      </Link>
-      <Link className={activeLink("bookings")} to={"/account/bookings"}>
+      </NavLink>
+
+      <NavLink
+        to="/bookings"
+        className={({ isActive }) =>
+          `${
+            isActive && "  bg-primary text-white"
+          } py-2 px-2 lg:px-6 text-sm text-nowrap lg:text-base inline-flex gap-1 items-center  bg-gray-200  rounded-full`
+        }
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -57,8 +60,16 @@ const AccountNav = () => {
           />
         </svg>
         My bookings
-      </Link>
-      <Link className={activeLink("places")} to={"/account/places"}>
+      </NavLink>
+
+      <NavLink
+        to="/places"
+        className={({ isActive }) =>
+          `${
+            isActive && "  bg-primary text-white"
+          } py-2 px-2 lg:px-6 text-sm text-nowrap lg:text-base inline-flex gap-1 items-center  bg-gray-200  rounded-full`
+        }
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -74,7 +85,7 @@ const AccountNav = () => {
           />
         </svg>
         My listings
-      </Link>
+      </NavLink>
     </nav>
   );
 };
