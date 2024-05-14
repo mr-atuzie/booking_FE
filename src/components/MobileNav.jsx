@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+// import { UserContext } from "../UserContext";
 
 const MobileNav = () => {
+  //   const { user } = useContext(UserContext);
   return (
     <div className=" bg-white border-t bottom-0  fixed w-full py-3 flex justify-around lg:hidden">
       <NavLink to="/" className={({ isActive }) => isActive && " text-primary"}>
