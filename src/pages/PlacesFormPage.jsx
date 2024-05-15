@@ -1,9 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Navigate, useParams } from "react-router-dom";
 import Perks from "../components/Perks";
 import AccountNav from "../components/AccountNav";
+import { UserContext } from "../UserContext";
 
 const PlacesFormPage = () => {
   const { id } = useParams();
@@ -20,6 +21,7 @@ const PlacesFormPage = () => {
   const [checkOut, setCheckOut] = useState("");
   const [maxGuests, setMaxGuests] = useState(1);
   const [redirect, setRedirect] = useState("");
+  const { user, ready } = useContext(UserContext);
 
   useEffect(() => {
     if (!id) {
@@ -217,6 +219,10 @@ const PlacesFormPage = () => {
 
   if (redirect) {
     return <Navigate to={redirect} />;
+  }
+
+  if (ready && !user) {
+    return <Navigate to={"/login"} />;
   }
 
   return (
