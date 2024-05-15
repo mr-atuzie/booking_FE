@@ -78,7 +78,7 @@ const PlacesPage = () => {
                   <h2 className=" font-medium leading-4 capitalize text-sm lg:text-base">
                     {place.title}
                   </h2>
-                  <p className=" text-xs mt-1 lg:hidden">
+                  <p className=" text-xs  mt-1 lg:hidden">
                     {shortenText(place.description, 150)}
                   </p>
 

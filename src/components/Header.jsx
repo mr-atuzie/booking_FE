@@ -22,7 +22,7 @@ const Header = () => {
             d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
           />
         </svg>
-        <span className=" font-bold lg:text-xl">airbnb</span>
+        <span className=" font-bold lg:text-xl">Airbnb</span>
       </Link>
 
       <div className=" hidden lg:flex items-center border gap-2 shadow-md shadow-gray-300 border-gray-300 rounded-full px-4 py-2">

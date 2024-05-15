@@ -161,7 +161,7 @@ const PlacePage = () => {
       </div>
       <div className=" my-3">
         <h2 className=" font-medium">Description</h2>
-        <p className=" text-sm ">{place.description}</p>
+        <p className=" text-sm text-gray-500">{place.description}</p>
       </div>
       <div className=" grid gap-2  lg:grid-cols-2">
         {/* <div className=" text-sm">
@@ -179,7 +179,7 @@ const PlacePage = () => {
 
         <div className=" border rounded-2xl p-2 mt-4">
           <div className="flex">
-            <div className="  ">
+            <div className=" w-[50%] ">
               <label className=" text-xs font-medium">Check in:</label>
               <input
                 className=" bg-gray-200 text-xs w-full"
@@ -188,7 +188,7 @@ const PlacePage = () => {
                 id=""
               />
             </div>
-            <div className="  border-l">
+            <div className=" w-[50%] border-l">
               <label className="text-xs font-medium">Check out:</label>
               <input
                 className=" bg-gray-200 text-xs w-full"
@@ -200,7 +200,7 @@ const PlacePage = () => {
           </div>
           <div className="border-t ">
             <label className=" text-xs font-medium">Number of guests</label>
-            <input className=" text-xs" type="number" />
+            <input className=" text-xs bg-gray-200" type="number" />
           </div>
         </div>
         <button className="primary text-sm mt-4">Book this place</button>

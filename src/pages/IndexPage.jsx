@@ -40,7 +40,7 @@ const IndexPage = () => {
       {!grid ? (
         <button
           onClick={() => handleGrid(true)}
-          className=" flex items-center border gap-1  bg-transparent   rounded-full px-4 py-1 lg:hidden"
+          className=" bg-primary text-white flex items-center  gap-1  rounded-full px-4 py-1 lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ const IndexPage = () => {
       ) : (
         <button
           onClick={() => handleGrid(false)}
-          className=" flex items-center border gap-1  bg-transparent   rounded-full px-4 py-1 lg:hidden"
+          className=" bg-primary text-white flex items-center  gap-1  rounded-full px-4 py-1 lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -70,12 +70,12 @@ const IndexPage = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5"
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+              d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
             />
           </svg>
 
