@@ -85,7 +85,7 @@ const IndexPage = () => {
 
       <div
         className={`${
-          grid ? "grid-cols-2" : " grid-cols-1"
+          !grid ? "grid-cols-1" : " grid-cols-2"
         } mt-3 mb-32 lg:mt-8 grid gap-3 lg:gap-8  md:grid-cols-3 lg:grid-cols-4`}
       >
         {places.length > 0 &&
