@@ -179,7 +179,7 @@ const PlacePage = () => {
 
         <div className=" border rounded-2xl p-2 mt-4">
           <div className="flex">
-            <div className=" w-[50%] ">
+            <div className=" w-[50%] p-1 ">
               <label className=" text-xs font-medium">Check in:</label>
               <input
                 className=" bg-gray-200 text-xs w-full"
@@ -188,7 +188,7 @@ const PlacePage = () => {
                 id=""
               />
             </div>
-            <div className=" w-[50%] border-l">
+            <div className=" w-[50%] p-1 border-l">
               <label className="text-xs font-medium">Check out:</label>
               <input
                 className=" bg-gray-200 text-xs w-full"
