@@ -6,7 +6,10 @@ const MobileNav = () => {
   //   const { user } = useContext(UserContext);
   return (
     <div className=" bg-white border-t bottom-0  fixed w-full py-3 flex justify-around lg:hidden">
-      <NavLink to="/" className={({ isActive }) => isActive && " text-primary"}>
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? " text-primary" : "")}
+      >
         <div className=" flex flex-col justify-center gap-1 items-center">
           <span>
             <svg
@@ -30,7 +33,7 @@ const MobileNav = () => {
 
       <NavLink
         to="/add-place"
-        className={({ isActive }) => isActive && " text-primary"}
+        className={({ isActive }) => (isActive ? " text-primary" : "")}
       >
         <div className=" flex flex-col justify-center gap-1 items-center">
           <span>
@@ -55,7 +58,7 @@ const MobileNav = () => {
 
       <NavLink
         to="/bookings"
-        className={({ isActive }) => isActive && " text-primary"}
+        className={({ isActive }) => (isActive ? " text-primary" : "")}
       >
         <div className=" flex flex-col justify-center gap-1 items-center">
           <span>
@@ -80,7 +83,7 @@ const MobileNav = () => {
 
       <NavLink
         to="/account"
-        className={({ isActive }) => isActive && " text-primary"}
+        className={({ isActive }) => (isActive ? " text-primary" : "")}
       >
         <div className=" flex flex-col gap-1 justify-center items-center">
           <span>

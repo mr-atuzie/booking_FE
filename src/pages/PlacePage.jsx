@@ -177,12 +177,12 @@ const PlacePage = () => {
           night
         </h1>
 
-        <div className=" border rounded-2xl mt-4">
+        <div className=" border rounded-2xl p-2 mt-4">
           <div className="flex">
             <div className="  ">
               <label className=" text-xs font-medium">Check in:</label>
               <input
-                className=" bg-gray-200 text-xs"
+                className=" bg-gray-200 text-xs w-full"
                 type="datetime-local"
                 name=""
                 id=""
@@ -191,7 +191,7 @@ const PlacePage = () => {
             <div className="  border-l">
               <label className="text-xs font-medium">Check out:</label>
               <input
-                className=" bg-gray-200 text-xs"
+                className=" bg-gray-200 text-xs w-full"
                 type="datetime-local"
                 name=""
                 id=""
