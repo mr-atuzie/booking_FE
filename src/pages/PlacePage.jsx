@@ -34,7 +34,7 @@ const PlacePage = () => {
 
   if (showAllPhotos) {
     return (
-      <div className="absolute inset-0  bg-black min-h-screen ">
+      <div className="absolute z-50 inset-0  bg-black min-h-screen ">
         <div className=" grid gap-4 w-full mb-32 bg-black p-4 lg:p-24 ">
           <div>
             <h2 className="font-medium    lg:text-2xl mb-2 text-white">
