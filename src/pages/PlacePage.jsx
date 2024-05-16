@@ -161,7 +161,7 @@ const PlacePage = () => {
       </div>
       <div className=" my-3">
         <h2 className=" font-medium">Description</h2>
-        <p className=" text-sm text-gray-500">{place.description}</p>
+        <p className=" text-sm text-gray-700">{place.description}</p>
       </div>
       <div className=" grid gap-2  lg:grid-cols-2">
         {/* <div className=" text-sm">
