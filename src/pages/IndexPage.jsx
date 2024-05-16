@@ -38,7 +38,7 @@ const IndexPage = () => {
       {!grid ? (
         <button
           onClick={() => handleGrid(true)}
-          className=" bg-primary opacity-50 text-white flex items-center  gap-1  rounded-full px-4 py-1 lg:hidden"
+          className=" bg-primary  text-white flex items-center  gap-1  rounded-full px-4 py-1 lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -102,10 +102,13 @@ const IndexPage = () => {
                 <h2 className="text-sm font-medium leading-4 ">
                   {shortenText(place.title, 35)}
                 </h2>
-                <p className=" text-xs    capitalize my-1 ">{place.address}</p>
-                <div className=" text-sm ">
-                  <span className=" font-semibold"> ${place.price}</span> per
-                  night
+                <p className=" text-xs    capitalize  ">{place.address}</p>
+                <div className=" text-sm text-gray-500 ">
+                  <span className=" font-semibold text-black">
+                    {" "}
+                    ${place.price}
+                  </span>{" "}
+                  per night
                 </div>
               </Link>
             );
