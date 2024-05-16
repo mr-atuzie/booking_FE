@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import Loader from "./Loader";
 import { USDollar } from "../utils";
+import { Navigate } from "react-router-dom";
 
 const BookingForm = ({ place }) => {
   const [checkIn, setCheckIn] = useState("");
@@ -12,6 +13,7 @@ const BookingForm = ({ place }) => {
   const [mobile, setMobile] = useState("");
   const [maxGuests, setMaxGuests] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [redirect, setRedirect] = useState("");
 
   let numberOfDays = 0;
 
@@ -37,6 +39,8 @@ const BookingForm = ({ place }) => {
       });
       console.log(data);
       setLoading(false);
+      const bookingId = data._id;
+      setRedirect(`/booking/${bookingId}`);
     } catch (error) {
       setLoading(false);
       const message =
@@ -49,6 +53,10 @@ const BookingForm = ({ place }) => {
       toast.error(message);
     }
   };
+
+  if (redirect) {
+    return <Navigate to={redirect} />;
+  }
 
   return (
     <>

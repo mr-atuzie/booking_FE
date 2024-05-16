@@ -10,6 +10,7 @@ import PlacesPage from "./pages/PlacesPage";
 import PlacesFormPage from "./pages/PlacesFormPage";
 import PlacePage from "./pages/PlacePage";
 import BookingsPage from "./pages/BookingsPage";
+import Booking from "./pages/Booking";
 
 axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URI;
 axios.defaults.withCredentials = true;
@@ -26,6 +27,7 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/places" element={<PlacesPage />} />
           <Route path="/bookings" element={<BookingsPage />} />
+          <Route path="/booking/:id" element={<Booking />} />
           <Route path="/add-place" element={<PlacesFormPage />} />
           <Route path="/update-place/:id" element={<PlacesFormPage />} />
           <Route path="/place/:id" element={<PlacePage />} />

@@ -12,6 +12,7 @@ const BookingsPage = () => {
   return (
     <div>
       <AccountNav />
+      this is me
     </div>
   );
 };
