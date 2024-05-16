@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 const Loader = () => {
   return ReactDOM.createPortal(
-    <div className=" w-full h-screen bg-black/80 fixed top-0 z-50 flex justify-center items-center">
+    <div className=" w-full h-screen bg-black/65 fixed top-0 z-50 flex justify-center items-center">
       <div role="status">
         <svg
           aria-hidden="true"

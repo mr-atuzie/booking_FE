@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { shortenText } from "../utils";
+import { USDollar, shortenText } from "../utils";
 
 const IndexPage = () => {
   const [places, setPlaces] = useState([]);
@@ -107,12 +107,13 @@ const IndexPage = () => {
                 <h2 className="text-sm font-medium leading-4 ">
                   {shortenText(place.title, 35)}
                 </h2>
-                <p className=" text-xs  text-gray-500 my-0.5   capitalize  ">
+                <p className=" text-xs  text-gray-700 my-0.5   capitalize  ">
                   {place.address}
                 </p>
-                <div className=" text-xs font-light ">
+                <div className=" text-xs  ">
+                  $
                   <span className=" font-medium text-black">
-                    ${place.price}
+                    {USDollar.format(place.price)}
                   </span>{" "}
                   per night
                 </div>

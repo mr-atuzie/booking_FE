@@ -3,16 +3,19 @@ import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import Loader from "../components/Loader";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const { setUser } = useContext(UserContext);
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
+    setLoading(true);
     try {
       const { data } = await axios.post("/api/v1/user/login", {
         email,
@@ -20,9 +23,11 @@ const LoginPage = () => {
       });
 
       setUser(data);
+      setLoading(false);
       toast.success("Login successful");
       setRedirect(true);
     } catch (error) {
+      setLoading(false);
       const message =
         (error.response &&
           error.response.data &&
@@ -39,39 +44,42 @@ const LoginPage = () => {
     return <Navigate to={"/"} />;
   }
   return (
-    <div className=" mt-4 grow flex items-center justify-center">
-      <div className="  mb-64">
-        <h1 className=" text-2xl lg:text-4xl text-center mb-4">Login</h1>
-        <form className=" lg:max-w-md mx-auto " onSubmit={handleSubmit}>
-          <input
-            className=" placeholder:font-normal"
-            type="email"
-            placeholder="your@email.com"
-            value={email}
-            onChange={(ev) => setEmail(ev.target.value)}
-          />
-          <input
-            className=" placeholder:font-normal"
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={(ev) => setPassword(ev.target.value)}
-          />
-          <button className="primary mt-4" type="submit">
-            Login
-          </button>
-          <div className=" text-sm text-center text-clip py-2 text-gray-500">
-            Don't have an account yet?{" "}
-            <Link
-              className="  text-center underline text-black"
-              to={"/register"}
-            >
-              Register now
-            </Link>
-          </div>
-        </form>
+    <>
+      {loading && <Loader />}
+      <div className=" mt-4 grow flex items-center justify-center">
+        <div className="  mb-64">
+          <h1 className=" text-2xl lg:text-4xl text-center mb-4">Login</h1>
+          <form className=" lg:max-w-md mx-auto " onSubmit={handleSubmit}>
+            <input
+              className=" placeholder:font-normal"
+              type="email"
+              placeholder="your@email.com"
+              value={email}
+              onChange={(ev) => setEmail(ev.target.value)}
+            />
+            <input
+              className=" placeholder:font-normal"
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(ev) => setPassword(ev.target.value)}
+            />
+            <button className="primary mt-4" type="submit">
+              Login
+            </button>
+            <div className=" text-sm text-center text-clip py-2 text-gray-500">
+              Don't have an account yet?{" "}
+              <Link
+                className="  text-center underline text-black"
+                to={"/register"}
+              >
+                Register now
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
