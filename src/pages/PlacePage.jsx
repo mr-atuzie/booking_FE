@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import BookingForm from "../components/BookingForm";
 
 const PlacePage = () => {
   const [place, setPlace] = useState(null);
@@ -37,7 +38,7 @@ const PlacePage = () => {
       <div className="absolute z-50 inset-0  bg-black min-h-screen ">
         <div className=" grid gap-4 w-full mb-32 bg-black p-4 lg:p-24 ">
           <div>
-            <h2 className="font-medium    lg:text-2xl mb-2 text-white">
+            <h2 className="font-medium mr-28    lg:text-2xl mb-2 text-white">
               Photos of {place.title}
             </h2>
             <button
@@ -112,6 +113,7 @@ const PlacePage = () => {
               <div>
                 {place.photos?.[0] && (
                   <img
+                    onClick={() => setShowAllPhotos(true)}
                     className=" object-cover aspect-square "
                     src={place?.photos[0]}
                     alt=""
@@ -123,6 +125,7 @@ const PlacePage = () => {
           <div className=" grid ">
             {place?.photos?.[1] && (
               <img
+                onClick={() => setShowAllPhotos(true)}
                 className="object-cover aspect-square "
                 src={place?.photos[1]}
                 alt=""
@@ -132,6 +135,7 @@ const PlacePage = () => {
             <div className=" overflow-hidden">
               {place?.photos?.[2] && (
                 <img
+                  onClick={() => setShowAllPhotos(true)}
                   className="object-cover aspect-square relative top-2 "
                   src={place?.photos[2]}
                   alt=""
@@ -169,47 +173,11 @@ const PlacePage = () => {
           <br />
           <span className=" font-medium">Check out:</span> {place.checkOut} PM
           <br />
+          
           <span className=" font-medium">Max number of guests:</span>{" "}
           {place.maxGuests}
         </div> */}
-
-        <div className=" border-2 rounded-2xl  mt-4">
-          {/* <p className=" text-xs font-medium text-center text-primary mb-1">
-            BOOKING FORM
-          </p> */}
-          {/* <h1 className=" text-center text-gray-500">
-            <span className=" font-semibold text-black"> ${place.price}</span>
-            /per night
-          </h1> */}
-          <div className=" flex gap-2  items-center">
-            <div className=" w-[50%] p-2">
-              <label className=" text-xs font-medium">Check in:</label>
-              <input
-                className=" bg-gray-200 text-xs w-full"
-                type="date"
-                name=""
-                id=""
-              />
-            </div>
-
-            <div className="  w-[50%]  border-l-2 p-2">
-              <label className="text-xs font-medium">Check out:</label>
-              <input
-                className=" bg-gray-200 text-xs w-full"
-                type="date"
-                name=""
-                id=""
-              />
-            </div>
-          </div>
-
-          <div className=" p-2  border-t-2">
-            <label className=" text-xs font-medium">Number of guests</label>
-            <input className=" text-xs bg-gray-200" type="number" />
-          </div>
-        </div>
-
-        <button className="primary text-sm mt-4">Book this place</button>
+        <BookingForm place={place} />
       </div>
     </div>
   );
