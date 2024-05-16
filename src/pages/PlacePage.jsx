@@ -173,15 +173,15 @@ const PlacePage = () => {
           {place.maxGuests}
         </div> */}
 
-        <div className=" border rounded-2xl py-4 px-2 mt-4">
-          <p className=" text-xs font-medium text-center text-primary mb-1">
+        <div className=" border-2 rounded-2xl  mt-4">
+          {/* <p className=" text-xs font-medium text-center text-primary mb-1">
             BOOKING FORM
-          </p>
-          <h1 className=" text-center text-gray-500">
+          </p> */}
+          {/* <h1 className=" text-center text-gray-500">
             <span className=" font-semibold text-black"> ${place.price}</span>
             /per night
-          </h1>
-          <div className=" flex gap-2 items-center">
+          </h1> */}
+          <div className=" flex gap-2 p-2 items-center">
             <div className=" ">
               <label className=" text-xs font-medium">Check in:</label>
               <input
@@ -192,7 +192,7 @@ const PlacePage = () => {
               />
             </div>
 
-            <div className=" ">
+            <div className=" border-l p-2">
               <label className="text-xs font-medium">Check out:</label>
               <input
                 className=" bg-gray-200 text-xs w-full"
@@ -203,13 +203,13 @@ const PlacePage = () => {
             </div>
           </div>
 
-          <div className=" ">
+          <div className=" p-2  border-t">
             <label className=" text-xs font-medium">Number of guests</label>
             <input className=" text-xs bg-gray-200" type="number" />
           </div>
-
-          <button className="primary text-sm mt-4">Book this place</button>
         </div>
+
+        <button className="primary text-sm mt-4">Book this place</button>
       </div>
     </div>
   );
