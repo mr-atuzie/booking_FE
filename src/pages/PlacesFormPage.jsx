@@ -226,7 +226,7 @@ const PlacesFormPage = () => {
   }
 
   return (
-    <div>
+    <div className=" mb-32">
       <AccountNav />
       <form onSubmit={savePlace}>
         {assembleInput("Title", "title should be short and catchy")}

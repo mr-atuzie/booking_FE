@@ -34,7 +34,7 @@ const PlacePage = () => {
 
   if (showAllPhotos) {
     return (
-      <div className="absolute inset-0 bg-black min-h-screen ">
+      <div className="absolute inset-0 mb-32 bg-black min-h-screen ">
         <div className=" grid gap-4 w-full bg-black p-4 lg:p-24 ">
           <div>
             <h2 className="font-medium text-lg   lg:text-2xl mb-2 text-white">
@@ -56,7 +56,7 @@ const PlacePage = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              Close photos
+              {/* Close photos */}
             </button>
           </div>
           {place.photos.length > 0 &&
@@ -172,38 +172,39 @@ const PlacePage = () => {
           <span className=" font-medium">Max number of guests:</span>{" "}
           {place.maxGuests}
         </div> */}
-        <h1 className=" text-sm ">
-          Price: <span className=" font-semibold"> ${place.price}</span>/per
-          night
-        </h1>
 
         <div className=" border rounded-2xl p-2 mt-4">
-          <div className="flex">
-            <div className=" w-[50%] p-1 ">
-              <label className=" text-xs font-medium">Check in:</label>
-              <input
-                className=" bg-gray-200 text-xs w-full"
-                type="datetime-local"
-                name=""
-                id=""
-              />
-            </div>
-            <div className=" w-[50%] p-1 border-l">
-              <label className="text-xs font-medium">Check out:</label>
-              <input
-                className=" bg-gray-200 text-xs w-full"
-                type="datetime-local"
-                name=""
-                id=""
-              />
-            </div>
+          <h1 className=" text-sm  text-center text-gray-500">
+            <span className=" font-semibold text-black"> ${place.price}</span>
+            /per night
+          </h1>
+          <div className=" ">
+            <label className=" text-xs font-medium">Check in:</label>
+            <input
+              className=" bg-gray-200 text-xs w-full"
+              type="date"
+              name=""
+              id=""
+            />
           </div>
-          <div className="border-t ">
+
+          <div className=" ">
+            <label className="text-xs font-medium">Check out:</label>
+            <input
+              className=" bg-gray-200 text-xs w-full"
+              type="date"
+              name=""
+              id=""
+            />
+          </div>
+
+          <div className=" ">
             <label className=" text-xs font-medium">Number of guests</label>
             <input className=" text-xs bg-gray-200" type="number" />
           </div>
+
+          <button className="primary text-sm mt-4">Book this place</button>
         </div>
-        <button className="primary text-sm mt-4">Book this place</button>
       </div>
     </div>
   );

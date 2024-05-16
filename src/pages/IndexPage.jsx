@@ -33,14 +33,12 @@ const IndexPage = () => {
     console.log(data);
   };
 
-  console.log(grid);
-
   return (
     <>
       {!grid ? (
         <button
           onClick={() => handleGrid(true)}
-          className=" bg-primary text-white flex items-center  gap-1  rounded-full px-4 py-1 lg:hidden"
+          className=" bg-primary opacity-50 text-white flex items-center  gap-1  rounded-full px-4 py-1 lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +46,7 @@ const IndexPage = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5"
+            className="w-4 h-4"
           >
             <path
               strokeLinecap="round"
@@ -57,7 +55,7 @@ const IndexPage = () => {
             />
           </svg>
 
-          <span className=" font-medium text-sm">Grid</span>
+          <span className=" font-medium text-sm">grid</span>
         </button>
       ) : (
         <button
@@ -70,7 +68,7 @@ const IndexPage = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-4 h-4"
           >
             <path
               strokeLinecap="round"
@@ -79,7 +77,7 @@ const IndexPage = () => {
             />
           </svg>
 
-          <span className=" text-sm font-medium">List</span>
+          <span className=" text-sm font-medium">list</span>
         </button>
       )}
 
