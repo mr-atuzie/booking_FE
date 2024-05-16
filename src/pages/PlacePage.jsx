@@ -182,7 +182,7 @@ const PlacePage = () => {
             /per night
           </h1> */}
           <div className=" flex gap-2  items-center">
-            <div className=" p-2">
+            <div className=" w-[50%] p-2">
               <label className=" text-xs font-medium">Check in:</label>
               <input
                 className=" bg-gray-200 text-xs w-full"
@@ -192,7 +192,7 @@ const PlacePage = () => {
               />
             </div>
 
-            <div className="  border-l-2 p-2">
+            <div className="  w-[50%]  border-l-2 p-2">
               <label className="text-xs font-medium">Check out:</label>
               <input
                 className=" bg-gray-200 text-xs w-full"
