@@ -1,5 +1,7 @@
+import axios from "axios";
 import { differenceInCalendarDays } from "date-fns";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const BookingForm = ({ place }) => {
   const [checkIn, setCheckIn] = useState("");
@@ -17,8 +19,24 @@ const BookingForm = ({ place }) => {
     );
   }
 
+  const handleSubmit = async () => {
+    try {
+      const { data } = await axios.post("/api/v1/places/book");
+      console.log(data);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      toast.error(message);
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h1 className="  text-center text-gray-500">
         <span className=" font-semibold text-black">Price: ${place.price}</span>
         /per night
@@ -32,6 +50,7 @@ const BookingForm = ({ place }) => {
               type="date"
               value={checkIn}
               onChange={(ev) => setCheckIn(ev.target.value)}
+              required
             />
           </div>
 
@@ -42,6 +61,7 @@ const BookingForm = ({ place }) => {
               type="date"
               value={checkOut}
               onChange={(ev) => setCheckOut(ev.target.value)}
+              required
             />
           </div>
         </div>
@@ -53,6 +73,7 @@ const BookingForm = ({ place }) => {
             type="number"
             value={maxGuests}
             onChange={(ev) => setMaxGuests(ev.target.value)}
+            required
           />
         </div>
         {numberOfDays > 0 && (
@@ -80,7 +101,7 @@ const BookingForm = ({ place }) => {
         )}
       </div>
 
-      <button className="primary text-sm mt-4">
+      <button type="submit" className="primary text-sm mt-4">
         Book this place{" "}
         {numberOfDays > 0 && (
           <span>

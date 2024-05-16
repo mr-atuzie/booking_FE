@@ -159,7 +159,7 @@ const PlacesFormPage = () => {
 
         toast.success("Place updated successfully");
         console.log(data);
-        setRedirect("/account/places");
+        setRedirect("/");
       } catch (error) {
         const message =
           (error.response &&

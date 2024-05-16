@@ -7,13 +7,15 @@ import { shortenText } from "../utils";
 
 const PlacesPage = () => {
   const [places, setPlaces] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get("/api/v1/places/user-place")
       .then(({ data }) => {
         setPlaces(data);
-        console.log(data);
+        setLoading(false);
       })
       .catch((error) => {
         const message =
@@ -23,10 +25,15 @@ const PlacesPage = () => {
           error.message ||
           error.toString();
 
+        setLoading(false);
         toast.error(message);
         console.log(error);
       });
   }, []);
+
+  if (loading) {
+    return "Loading...";
+  }
 
   return (
     <div>

@@ -6,15 +6,19 @@ import { shortenText } from "../utils";
 
 const IndexPage = () => {
   const [places, setPlaces] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [grid, setGrid] = useState(localStorage.getItem("grid"));
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get("/api/v1/places/")
       .then(({ data }) => {
         setPlaces(data);
+        setLoading(false);
       })
       .catch((error) => {
+        setLoading(false);
         const message =
           (error.response &&
             error.response.data &&
@@ -30,8 +34,11 @@ const IndexPage = () => {
   const handleGrid = (data) => {
     setGrid(data);
     localStorage.setItem("grid", data);
-    console.log(data);
   };
+
+  if (loading) {
+    return "Loading...";
+  }
 
   return (
     <>
@@ -103,7 +110,7 @@ const IndexPage = () => {
                 <p className=" text-xs  text-gray-500 my-0.5   capitalize  ">
                   {place.address}
                 </p>
-                <div className=" text-sm ">
+                <div className=" text-xs font-light ">
                   <span className=" font-medium text-black">
                     ${place.price}
                   </span>{" "}
