@@ -14,15 +14,18 @@ const Header = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 lg:w-8 lg:h-8 h-6 -rotate-90"
+          className="w-6 h-6"
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+            d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819"
           />
         </svg>
-        <span className=" font-bold lg:text-xl">airbnb</span>
+        <span className=" leading-3 uppercase font-bold lg:text-xl">
+          NATION <br />
+          properties
+        </span>
       </Link>
 
       <div className=" hidden lg:flex items-center border gap-2 shadow-md shadow-gray-300 border-gray-300 rounded-full px-4 py-2">
