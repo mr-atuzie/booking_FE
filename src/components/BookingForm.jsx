@@ -1,12 +1,15 @@
 import axios from "axios";
 import { differenceInCalendarDays } from "date-fns";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Loader from "./Loader";
 import { USDollar } from "../utils";
 import { Navigate } from "react-router-dom";
+import { UserContext } from "../UserContext";
 
 const BookingForm = ({ place }) => {
+  const { user } = useContext(UserContext);
+
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [name, setName] = useState("");
@@ -16,6 +19,12 @@ const BookingForm = ({ place }) => {
   const [redirect, setRedirect] = useState("");
 
   let numberOfDays = 0;
+
+  useEffect(() => {
+    if (user) {
+      setName(user.name);
+    }
+  }, [user]);
 
   if (checkIn && checkOut) {
     numberOfDays = differenceInCalendarDays(
@@ -73,7 +82,7 @@ const BookingForm = ({ place }) => {
             <div className=" w-[50%] p-2">
               <label className=" text-xs font-medium">Check in:</label>
               <input
-                className=" bg-gray-200 text-xs w-full"
+                className="  text-xs w-full"
                 type="date"
                 value={checkIn}
                 onChange={(ev) => setCheckIn(ev.target.value)}
@@ -84,7 +93,7 @@ const BookingForm = ({ place }) => {
             <div className="  w-[50%]  border-l-2 p-2">
               <label className="text-xs font-medium">Check out:</label>
               <input
-                className=" bg-gray-200 text-xs w-full"
+                className=" text-xs w-full"
                 type="date"
                 value={checkOut}
                 onChange={(ev) => setCheckOut(ev.target.value)}
@@ -96,7 +105,7 @@ const BookingForm = ({ place }) => {
           <div className=" p-2  border-t-2">
             <label className=" text-xs font-medium">Number of guests</label>
             <input
-              className=" text-xs bg-gray-200"
+              className=" text-xs "
               type="number"
               value={maxGuests}
               onChange={(ev) => setMaxGuests(ev.target.value)}
