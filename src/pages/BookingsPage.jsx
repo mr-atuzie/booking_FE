@@ -67,7 +67,7 @@ const BookingsPage = () => {
                   {booking.place.title}
                 </h2>
 
-                <p className=" text-sm flex items-center gap-1 my-2 font-medium">
+                <p className=" text-xs flex items-center gap-1 my-2 font-medium">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -88,7 +88,7 @@ const BookingsPage = () => {
                   )}{" "}
                   nights
                 </p>
-                <p className=" text-sm flex items-center font-medium gap-2 mb-2">
+                <p className=" text-xs flex items-center font-medium gap-2 mb-2">
                   <span className="flex gap-1 items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ const BookingsPage = () => {
                   </span>
                 </p>
 
-                <p className=" text-sm flex items-center font-medium gap-2">
+                <p className=" text-xs flex items-center font-medium gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

@@ -45,7 +45,7 @@ const IndexPage = () => {
       {!grid ? (
         <button
           onClick={() => handleGrid(true)}
-          className=" bg-primary text-white flex items-center  gap-1 min-w-10 border shadow-md  rounded-lg px-4 py-1 lg:hidden"
+          className=" bg-primary text-white flex items-center my-3  gap-1 min-w-10 border shadow-md  rounded-lg px-4 py-1 lg:hidden"
         >
           <span className=" font-medium text-sm">Filter</span>
           <svg
@@ -66,7 +66,7 @@ const IndexPage = () => {
       ) : (
         <button
           onClick={() => handleGrid(false)}
-          className=" bg-primary text-white flex items-center  gap-1 min-w-10 border shadow-md  rounded-lg px-4 py-1 lg:hidden"
+          className=" bg-primary my-3 text-white flex items-center  gap-1 min-w-10 border shadow-md  rounded-lg px-4 py-1 lg:hidden"
         >
           <span className=" text-sm font-medium">Filter</span>
           <svg
@@ -111,9 +111,8 @@ const IndexPage = () => {
                   {place.address}
                 </p>
                 <div className=" text-xs  ">
-                  $
                   <span className=" font-medium text-black">
-                    {USDollar.format(place.price)}
+                    $ {USDollar.format(place.price)}
                   </span>{" "}
                   per night
                 </div>

@@ -164,7 +164,7 @@ const Booking = () => {
         </button>
       </div>
       <div className=" bg-gray-200  mt-3 p-2 rounded-2xl">
-        <p className=" text-sm  font-medium flex items-center gap-2 mb-2">
+        <p className=" text-xs  font-medium flex items-center gap-2 mb-2">
           <span className="flex gap-1 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +224,7 @@ const Booking = () => {
           </span>
         </p>
 
-        <p className=" text-sm flex items-center font-medium gap-2">
+        <p className=" text-xs flex items-center font-medium gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
