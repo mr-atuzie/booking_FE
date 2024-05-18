@@ -48,12 +48,15 @@ const Account = () => {
       <AccountNav />
 
       <div className=" text-center lg:max-w-lg mx-auto">
-        <p>
-          Logged in as {user?.name} {user?.email}
-          <button onClick={logout} className=" primary max-w-sm mt-2">
-            Logout
-          </button>
+        <h1 className=" font-medium text-sm">
+          Name: <span className=" text-gray-700">{user?.name}</span>
+        </h1>
+        <p className=" font-medium text-sm">
+          Email: <span className=" text-gray-700">{user?.email}</span>
         </p>
+        <button onClick={logout} className=" primary max-w-sm mt-2">
+          Logout
+        </button>
       </div>
     </div>
   );

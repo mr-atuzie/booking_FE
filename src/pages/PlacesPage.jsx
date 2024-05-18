@@ -86,7 +86,7 @@ const PlacesPage = () => {
                     {place.title}
                   </h2>
                   <p className=" text-xs  mt-1 lg:hidden">
-                    {shortenText(place.description, 150)}
+                    {shortenText(place.description, 120)}
                   </p>
 
                   <p className=" hidden lg:block text-sm">
