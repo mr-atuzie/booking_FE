@@ -50,7 +50,7 @@ const BookingsPage = () => {
           return (
             <Link
               to={`/bookings/${booking._id}`}
-              className=" flex gap-2 bg-gray-200 rounded-2xl overflow-auto"
+              className=" flex gap-2 bg-gray-100 rounded-2xl overflow-auto"
               key={booking._id}
             >
               <div className=" w-28">
@@ -67,7 +67,7 @@ const BookingsPage = () => {
                   {booking.place.title}
                 </h2>
 
-                <p className=" text-xs flex items-center gap-1 my-2 font-medium">
+                <p className=" text-xs flex items-center gap-1 mt-2 mb-1 font-medium">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -88,7 +88,7 @@ const BookingsPage = () => {
                   )}{" "}
                   nights
                 </p>
-                <p className=" text-xs flex items-center font-medium gap-2 mb-2">
+                <p className=" text-xs flex items-center font-medium gap-2 mb-1">
                   <span className="flex gap-1 items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

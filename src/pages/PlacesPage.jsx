@@ -68,10 +68,10 @@ const PlacesPage = () => {
             return (
               <Link
                 to={"/update-place/" + place._id}
-                className=" flex cursor-pointer mb-2 gap-2 lg:gap-4 bg-gray-100 p-2 lg:p-4 rounded-2xl"
+                className=" flex cursor-pointer mb-2 gap-2 lg:gap-4 bg-gray-100 overflow-hidden  rounded-2xl"
                 key={place._id}
               >
-                <div className=" h-32 w-32 flex  bg-gray-300 grow shrink-0 ">
+                <div className=" w-28 h-28 lg:h-32 lg:w-32 flex  bg-gray-300 grow shrink-0 ">
                   {place.photos.length > 0 && (
                     <img
                       className=" object-cover"
@@ -81,7 +81,7 @@ const PlacesPage = () => {
                   )}
                 </div>
 
-                <div className=" grow-0 shrink">
+                <div className=" p-2 grow-0 shrink">
                   <h2 className=" font-medium leading-4 capitalize text-sm lg:text-base">
                     {place.title}
                   </h2>
