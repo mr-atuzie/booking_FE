@@ -112,7 +112,7 @@ const IndexPage = () => {
                 </p>
                 <div className=" text-xs  ">
                   <span className=" font-medium text-black">
-                    $ {USDollar.format(place.price)}
+                    ${USDollar.format(place.price)}
                   </span>{" "}
                   per night
                 </div>

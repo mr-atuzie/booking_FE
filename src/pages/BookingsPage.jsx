@@ -53,7 +53,7 @@ const BookingsPage = () => {
               className=" flex gap-2 bg-gray-200 rounded-2xl overflow-auto"
               key={booking._id}
             >
-              <div className=" w-36">
+              <div className=" w-28">
                 {booking.place.photos && (
                   <img
                     className="  w-full object-cover aspect-square "

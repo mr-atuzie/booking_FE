@@ -246,12 +246,12 @@ const Booking = () => {
         <h2 className=" font-medium">Description</h2>
         <p className=" text-sm text-gray-700">{booking.place.description}</p>
       </div>
-      <h1 className=" text-gray-700">
+      {/* <h1 className=" text-gray-700">
         <span className=" font-semibold text-black">
           Price: ${booking.place.price}
         </span>
         /per night
-      </h1>
+      </h1> */}
     </div>
   );
 };
