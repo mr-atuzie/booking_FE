@@ -196,7 +196,7 @@ const PlacesFormPage = () => {
         toast.success("Place added successfully");
         setLoading(false);
         console.log(data);
-        setRedirect("/account/places");
+        setRedirect("/");
       } catch (error) {
         setLoading(false);
         const message =
