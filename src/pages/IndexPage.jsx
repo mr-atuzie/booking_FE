@@ -104,7 +104,7 @@ const IndexPage = () => {
                     />
                   )}
                 </div>
-                <h2 className="text-sm capitalize font-medium leading-4 ">
+                <h2 className="text-sm capitalize truncate font-medium leading-4 ">
                   {shortenText(place.title, 35)}
                 </h2>
                 <p className=" text-xs  text-gray-700 my-0.5   capitalize  ">
