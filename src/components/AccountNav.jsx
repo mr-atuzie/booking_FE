@@ -17,7 +17,7 @@ const AccountNav = () => {
         className={({ isActive }) =>
           `${
             isActive && "  bg-primary text-white"
-          } py-2 px-2 lg:px-6 text-sm text-nowrap lg:text-base inline-flex gap-1 items-center  bg-gray-200  rounded-full`
+          } py-2 px-2 lg:px-6 text-xs text-nowrap lg:text-base inline-flex gap-1 items-center  bg-gray-200  rounded-full`
         }
       >
         <svg
@@ -42,7 +42,7 @@ const AccountNav = () => {
         className={({ isActive }) =>
           `${
             isActive && "  bg-primary text-white"
-          } py-2 px-2 lg:px-6 text-sm text-nowrap lg:text-base inline-flex gap-1 items-center  bg-gray-200  rounded-full`
+          } py-2 px-2 lg:px-6 text-xs text-nowrap lg:text-base inline-flex gap-1 items-center  bg-gray-200  rounded-full`
         }
       >
         <svg
@@ -67,7 +67,7 @@ const AccountNav = () => {
         className={({ isActive }) =>
           `${
             isActive && "  bg-primary text-white"
-          } py-2 px-2 lg:px-6 text-sm text-nowrap lg:text-base inline-flex gap-1 items-center  bg-gray-200  rounded-full`
+          } py-2 px-2 lg:px-6 text-xs  text-nowrap lg:text-base inline-flex gap-1 items-center  bg-gray-200  rounded-full`
         }
       >
         <svg
