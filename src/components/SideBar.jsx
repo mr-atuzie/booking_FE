@@ -9,11 +9,10 @@ const SideBar = () => {
   const { setUser } = useContext(UserContext);
   const logout = async () => {
     try {
-      const { data } = await axios.get("/api/v1/user/logout");
+      await axios.get("/api/v1/user/logout");
       setUser(null);
       toast.success("logout successfull");
       navigate("/");
-      console.log(data);
     } catch (error) {
       const message =
         (error.response &&

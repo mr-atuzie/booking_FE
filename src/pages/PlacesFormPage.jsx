@@ -245,7 +245,7 @@ const PlacesFormPage = () => {
         >
           {assembleInput("Title", "title should be short and catchy")}
           <input
-            className=" text-sm placeholder:text-sm placeholder:font-light bg-slate-50"
+            className=" text-sm placeholder:text-sm placeholder:font-light "
             type="text"
             placeholder=" for example: 2 bed room duplex"
             value={title}
@@ -368,7 +368,7 @@ const PlacesFormPage = () => {
                     </div>
                   );
                 })}
-              <label className="flex h-32 cursor-pointer items-center justify-center border bg-transparent rounded-2xl p-2 gap-1  text-gray-600">
+              <label className="flex h-32  bg-slate-100 cursor-pointer items-center justify-center border  rounded-2xl p-2 gap-1  text-gray-600">
                 <input
                   type="file"
                   multiple
