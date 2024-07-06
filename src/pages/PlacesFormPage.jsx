@@ -237,7 +237,7 @@ const PlacesFormPage = () => {
   return (
     <>
       {loading && <Loader />}
-      <div className=" mb-32">
+      <div className="lg:py-10 mb-32">
         <form
           className=" bg-white lg:p-6 lg:rounded lg:shadow-lg lg:w-[75%] mx-auto"
           onSubmit={savePlace}
