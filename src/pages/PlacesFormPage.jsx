@@ -239,7 +239,7 @@ const PlacesFormPage = () => {
       {loading && <Loader />}
       <div className="lg:py-10 mb-32">
         <form
-          className=" bg-white lg:p-6 lg:rounded lg:shadow-lg lg:w-[75%] mx-auto"
+          className=" bg-white lg:p-6 lg:rounded-lg lg:shadow-lg lg:w-[75%] mx-auto"
           onSubmit={savePlace}
         >
           {assembleInput("Title", "title should be short and catchy")}
