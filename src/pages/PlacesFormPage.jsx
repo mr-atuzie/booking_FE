@@ -239,10 +239,13 @@ const PlacesFormPage = () => {
       {loading && <Loader />}
       <div className=" mb-32">
         <AccountNav />
-        <form onSubmit={savePlace}>
+        <form
+          className=" bg-white lg:p-8 lg:rounded lg:shadow-lg lg:w-[80%] mx-auto"
+          onSubmit={savePlace}
+        >
           {assembleInput("Title", "title should be short and catchy")}
           <input
-            className=" text-sm placeholder:text-sm placeholder:font-light"
+            className=" text-sm placeholder:text-sm placeholder:font-light bg-slate-50"
             type="text"
             placeholder=" for example: 2 bed room duplex"
             value={title}

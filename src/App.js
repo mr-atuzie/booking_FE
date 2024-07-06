@@ -11,6 +11,7 @@ import PlacesFormPage from "./pages/PlacesFormPage";
 import PlacePage from "./pages/PlacePage";
 import BookingsPage from "./pages/BookingsPage";
 import Booking from "./pages/Booking";
+import AuthLayout from "./AuthLayout";
 
 axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URI;
 axios.defaults.withCredentials = true;
@@ -20,10 +21,12 @@ function App() {
     <BrowserRouter>
       <Toaster position="top-center" reverseOrder={false} />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<IndexPage />} />
+        <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+        </Route>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<IndexPage />} />
           <Route path="/account" element={<Account />} />
           <Route path="/places" element={<PlacesPage />} />
           <Route path="/bookings" element={<BookingsPage />} />

@@ -6,7 +6,7 @@ const Header = () => {
   const { user } = useContext(UserContext);
 
   return (
-    <header className="  flex justify-between">
+    <header className=" sticky  w-full z-40 bg-white top-0 p-4  flex justify-between">
       <Link to={"/"} className="flex items-center gap-1 " href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,10 +22,10 @@ const Header = () => {
             d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819"
           />
         </svg>
-        <span className=" leading-3 uppercase font-bold lg:text-xl">
-          NATION <br />
-          properties
-        </span>
+        <div className=" flex flex-col  uppercase font-bold ">
+          <span className="">NATION</span>
+          <span className=" -mt-2">properties</span>
+        </div>
       </Link>
 
       <div className=" hidden lg:flex items-center border gap-2 shadow-md shadow-gray-300 border-gray-300 rounded-full px-4 py-2">
@@ -54,7 +54,7 @@ const Header = () => {
 
       <Link to={user ? "/account" : "/login"}>
         <div className=" flex items-center border gap-2   rounded-full px-2 lg:px-4 py-1">
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -67,7 +67,7 @@ const Header = () => {
               strokeLinejoin="round"
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
-          </svg>
+          </svg> */}
 
           <div className=" bg-gray-500 rounded-full border border-gray-500 overflow-hidden text-white">
             <svg
