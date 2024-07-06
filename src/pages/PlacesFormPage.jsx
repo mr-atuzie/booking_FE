@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Navigate, useParams } from "react-router-dom";
 import Perks from "../components/Perks";
-import AccountNav from "../components/AccountNav";
+// import AccountNav from "../components/AccountNav";
 import { UserContext } from "../UserContext";
 import Loader from "../components/Loader";
 
@@ -238,7 +238,6 @@ const PlacesFormPage = () => {
     <>
       {loading && <Loader />}
       <div className=" mb-32">
-        <AccountNav />
         <form
           className=" bg-white lg:p-6 lg:rounded lg:shadow-lg lg:w-[75%] mx-auto"
           onSubmit={savePlace}
