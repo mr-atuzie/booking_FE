@@ -11,8 +11,10 @@ const Layout = () => {
       <Header />
       <div className="lg:flex ">
         <SideBar />
-        <div className=" h-full lg:ml-[20%] lg:w-[80%] px-4 lg:px-10   lg:bg-gray-50  ">
-          <Outlet />
+        <div className=" h-full lg:ml-[20%] lg:w-[80%]    lg:bg-gray-50  ">
+          <div className=" w-[95%] mx-auto">
+            <Outlet />
+          </div>
         </div>
       </div>
       <MobileNav />
