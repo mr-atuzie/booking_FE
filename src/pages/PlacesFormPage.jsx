@@ -58,11 +58,11 @@ const PlacesFormPage = () => {
   }, [id]);
 
   const inputHeader = (text) => {
-    return <h2 className=" lg:text-xl font-medium mt-4">{text}</h2>;
+    return <h2 className="  font-medium mt-4">{text}</h2>;
   };
 
   const inputDesc = (desc) => {
-    return <p className=" text-gray-500 -mt-1 text-xs lgtext-sm ">{desc}</p>;
+    return <p className=" text-gray-500 -mt-1 text-xs  ">{desc}</p>;
   };
 
   const assembleInput = (header, desc) => {
@@ -240,7 +240,7 @@ const PlacesFormPage = () => {
       <div className=" mb-32">
         <AccountNav />
         <form
-          className=" bg-white lg:p-8 lg:rounded lg:shadow-lg lg:w-[80%] mx-auto"
+          className=" bg-white lg:p-6 lg:rounded lg:shadow-lg lg:w-[75%] mx-auto"
           onSubmit={savePlace}
         >
           {assembleInput("Title", "title should be short and catchy")}
@@ -368,7 +368,7 @@ const PlacesFormPage = () => {
                     </div>
                   );
                 })}
-              <label className="flex h-32  bg-slate-100 cursor-pointer items-center justify-center border  rounded-2xl p-2 gap-1  text-gray-600">
+              <label className="flex h-32  bg-slate-50 cursor-pointer items-center justify-center border  rounded-2xl p-2 gap-1  text-gray-600">
                 <input
                   type="file"
                   multiple

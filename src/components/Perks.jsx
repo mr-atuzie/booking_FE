@@ -11,7 +11,7 @@ const Perks = ({ selected, onChange }) => {
     }
   };
   return (
-    <div className=" grid mt-2 gap-2 grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+    <div className=" grid mt-2 gap-2 grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
       <label className=" border flex rounded-2xl gap-2 items-center cursor-pointer p-2 lg:p-4">
         <input
           checked={selected.includes("wifi")}

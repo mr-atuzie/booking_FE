@@ -74,7 +74,7 @@ const Booking = () => {
   }
 
   return (
-    <div className="mt-4 mb-32 lg:mt-8 lg:w-[65%] lg:mx-auto">
+    <div className="mt-4  lg:mt-8 lg:w-[65%] lg:mx-auto">
       <h1 className="text-lg leading-5 font-medium lg:text-2xl">
         {booking.place?.title}
       </h1>

@@ -85,7 +85,7 @@ const Header = () => {
           </div>
 
           {!!user && (
-            <div className=" text-sm font-medium capitalize">{user.name}</div>
+            <div className=" text-xs font-medium capitalize">{user.name}</div>
           )}
         </div>
       </Link>

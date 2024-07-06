@@ -43,17 +43,17 @@ const BookingsPage = () => {
     return <Navigate to={"/login"} />;
   }
   return (
-    <div className=" mb-32">
+    <div className=" mb-32 min-h-screen">
       <AccountNav />
       {bookings?.length > 0 &&
         bookings.map((booking) => {
           return (
             <Link
               to={`/bookings/${booking._id}`}
-              className=" flex gap-2 bg-gray-100 rounded-2xl overflow-auto"
+              className=" flex gap-2 bg-gray-100 lg:bg-white rounded-2xl lg:w-[60%] shadow-md lg:mx-auto overflow-auto"
               key={booking._id}
             >
-              <div className=" w-28">
+              <div className=" w-28 lg:w-32">
                 {booking.place.photos && (
                   <img
                     className="  w-full object-cover aspect-square "
@@ -63,11 +63,11 @@ const BookingsPage = () => {
                 )}
               </div>
               <div className=" py-2">
-                <h2 className=" font-medium leading-5 text-sm">
+                <h2 className=" font-medium leading-5 text-sm lg:text-base">
                   {booking.place.title}
                 </h2>
 
-                <p className=" text-xs flex items-center gap-1 my-1.5 font-medium">
+                <p className=" text-xs lg:text-sm flex items-center gap-1 my-1.5 font-medium">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -88,7 +88,7 @@ const BookingsPage = () => {
                   )}{" "}
                   nights
                 </p>
-                <p className=" text-xs flex items-center font-medium gap-2 my-1.5">
+                <p className=" text-xs lg:text-sm flex items-center font-medium gap-2 my-1.5">
                   <span className="flex gap-1 items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ const BookingsPage = () => {
                   </span>
                 </p>
 
-                <p className=" text-xs flex items-center font-medium gap-2">
+                <p className=" text-xs lg:text-sm flex items-center font-medium gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

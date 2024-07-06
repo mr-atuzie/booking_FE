@@ -44,7 +44,7 @@ const Account = () => {
   }
 
   return (
-    <div>
+    <div className=" min-h-screen">
       <AccountNav />
 
       <div className=" text-center lg:max-w-lg mx-auto">
