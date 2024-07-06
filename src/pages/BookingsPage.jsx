@@ -63,7 +63,7 @@ const BookingsPage = () => {
                 )}
               </div>
               <div className=" py-2">
-                <h2 className=" font-medium leading-3 text-sm lg:text-base">
+                <h2 className=" font-medium leading-3 truncate text-sm lg:text-base">
                   {booking.place.title}
                 </h2>
 
