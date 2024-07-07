@@ -5,7 +5,7 @@ import { UserContext } from "../UserContext";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { differenceInCalendarDays, format } from "date-fns";
-import { USDollar } from "../utils";
+import { shortenText, USDollar } from "../utils";
 import Loader from "../components/Loader";
 
 const BookingsPage = () => {
@@ -51,7 +51,7 @@ const BookingsPage = () => {
           return (
             <Link
               to={`/bookings/${booking._id}`}
-              className=" flex gap-2 bg-gray-100  lg:bg-white rounded-2xl lg:w-[60%] lg:shadow-md lg:mx-auto overflow-auto"
+              className=" flex gap-2 bg-gray-100 mb-3  lg:bg-white rounded-2xl lg:w-[60%] lg:shadow-md lg:mx-auto overflow-auto"
               key={booking._id}
             >
               <div className=" w-28 lg:w-32">
@@ -64,8 +64,8 @@ const BookingsPage = () => {
                 )}
               </div>
               <div className=" py-2 flex gap-2 flex-col justify-center">
-                <h2 className=" font-medium leading-3 truncate text-sm lg:text-base">
-                  {booking.place.title}
+                <h2 className=" font-medium truncate text-sm lg:text-base">
+                  {shortenText(booking.place.title, 25)}
                 </h2>
 
                 {/* <p className=" text-xs lg:text-sm flex items-center gap-1  font-medium">
