@@ -242,7 +242,10 @@ const PlacesFormPage = () => {
           className=" bg-white lg:p-6 lg:rounded-lg lg:shadow-lg lg:w-[75%] mx-auto"
           onSubmit={savePlace}
         >
-          {assembleInput("Title", "title should be short and catchy")}
+          {assembleInput(
+            "Enter property title",
+            "title should be short and catchy"
+          )}
           <input
             className=" text-sm placeholder:text-sm placeholder:font-light "
             type="text"
@@ -250,7 +253,7 @@ const PlacesFormPage = () => {
             value={title}
             onChange={(ev) => setTitle(ev.target.value)}
           />
-          {assembleInput("Address", " address to this place")}
+          {assembleInput("Enter property address", " address to this place")}
           <input
             className=" text-sm placeholder:text-sm placeholder:font-light"
             type="text"
@@ -258,7 +261,7 @@ const PlacesFormPage = () => {
             value={address}
             onChange={(ev) => setAddress(ev.target.value)}
           />
-          {assembleInput("Photos", "more is better")}
+          {assembleInput("Add Photos of property", "more is better")}
           {/* <div className=" flex gap-2">
           <input
             className=" text-sm placeholder:text-sm placeholder:font-light"

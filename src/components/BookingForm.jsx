@@ -71,7 +71,7 @@ const BookingForm = ({ place }) => {
     <>
       {loading && <Loader />}
       <form onSubmit={handleSubmit}>
-        <h1 className="  text-center text-gray-500">
+        <h1 className="  text-center lg:text-start text-gray-500">
           <span className=" font-semibold text-black">
             Price: ${place.price}
           </span>

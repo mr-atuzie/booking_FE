@@ -4,6 +4,7 @@ import AccountNav from "../components/AccountNav";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { shortenText } from "../utils";
+import Loader from "../components/Loader";
 
 const PlacesPage = () => {
   const [places, setPlaces] = useState([]);
@@ -32,7 +33,7 @@ const PlacesPage = () => {
   }, []);
 
   if (loading) {
-    return "Loading...";
+    return <Loader />;
   }
 
   return (
@@ -68,7 +69,7 @@ const PlacesPage = () => {
             return (
               <Link
                 to={"/update-place/" + place._id}
-                className=" flex cursor-pointer mb-2 gap-2 lg:gap-4 bg-gray-100 overflow-hidden  rounded-2xl"
+                className=" flex cursor-pointer lg:w-[70%] lg:mx-auto mb-2 lg:mb-4 gap-2 lg:gap-4 bg-gray-100 lg:bg-white overflow-hidden  rounded-2xl"
                 key={place._id}
               >
                 <div className=" w-28 h-28 lg:h-32 lg:w-32 flex  bg-gray-300 grow shrink-0 ">
@@ -90,7 +91,7 @@ const PlacesPage = () => {
                   </p>
 
                   <p className=" hidden lg:block text-sm">
-                    {place.description}
+                    {shortenText(place.description, 300)}
                   </p>
                 </div>
               </Link>

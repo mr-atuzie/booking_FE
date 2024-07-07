@@ -6,7 +6,7 @@ const Header = () => {
   const { user } = useContext(UserContext);
 
   return (
-    <header className=" sticky  w-full z-40 bg-white top-0 p-4  flex justify-between">
+    <header className=" sticky  w-full z-40 bg-white top-0 p-4 lg:px-8  flex justify-between">
       <Link to={"/"} className="flex items-center gap-1 text-primary " href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,9 @@ const Header = () => {
           </div>
 
           {!!user && (
-            <div className=" text-xs font-medium capitalize">{user.name}</div>
+            <div className=" text-xs lg:text-sm font-medium capitalize">
+              {user.name}
+            </div>
           )}
         </div>
       </Link>

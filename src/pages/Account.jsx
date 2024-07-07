@@ -6,6 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 // import PlacesPage from "./PlacesPage";
 import AccountNav from "../components/AccountNav";
+import Loader from "../components/Loader";
 
 const Account = () => {
   // const { subpage } = useParams();
@@ -15,6 +16,7 @@ const Account = () => {
   const logout = async () => {
     try {
       const { data } = await axios.get("/api/v1/user/logout");
+      toast.success("Logout successfull");
       setRedirect("/");
       setUser(null);
       console.log(data);
@@ -32,7 +34,7 @@ const Account = () => {
   };
 
   if (!ready) {
-    return "Loading";
+    return <Loader />;
   }
 
   if (ready && !user && !redirect) {
@@ -47,16 +49,19 @@ const Account = () => {
     <div className=" min-h-screen">
       <AccountNav />
 
-      <div className=" text-center lg:max-w-lg mx-auto">
-        <h1 className=" font-medium text-sm">
+      <div className="  lg:bg-white lg:shadow-lg lg:p-8 lg:rounded-xl lg:max-w-lg mx-auto">
+        <h1 className=" font-medium text-sm lg:text-base">
           Name: <span className=" text-gray-700">{user?.name}</span>
         </h1>
-        <p className=" font-medium text-sm">
+        <p className=" font-medium text-sm lg:text-base">
           Email: <span className=" text-gray-700">{user?.email}</span>
         </p>
-        <button onClick={logout} className=" primary max-w-sm mt-2">
-          Logout
-        </button>
+
+        <div className=" flex justify-center items-center my-8">
+          <button onClick={logout} className=" primary max-w-sm mt-2">
+            Logout
+          </button>
+        </div>
       </div>
     </div>
   );

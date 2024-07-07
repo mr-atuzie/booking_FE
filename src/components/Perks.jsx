@@ -11,7 +11,7 @@ const Perks = ({ selected, onChange }) => {
     }
   };
   return (
-    <div className=" grid mt-2 gap-2 grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+    <div className=" grid mt-2 gap-2 md:gap-4 grid-cols-2 md:grid-cols-4 ">
       <label className=" border flex rounded-2xl gap-2 items-center cursor-pointer p-2 lg:p-4">
         <input
           checked={selected.includes("wifi")}
@@ -154,7 +154,7 @@ const Perks = ({ selected, onChange }) => {
           />
         </svg>
 
-        <span className=" text-xs lg:text-base">Private entrance</span>
+        <span className=" text-xs lg:text-base">Back door</span>
       </label>
     </div>
   );

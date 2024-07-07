@@ -74,7 +74,7 @@ const Booking = () => {
   }
 
   return (
-    <div className="mt-4  lg:mt-8 lg:w-[65%] lg:mx-auto">
+    <div className="mt-4 mb-32  lg:mt-8 lg:bg-white lg:rounded-lg lg:shadow-lg lg:w-[75%] lg:p-8 lg:mx-auto">
       <h1 className="text-lg leading-5 font-medium lg:text-2xl">
         {booking.place?.title}
       </h1>
@@ -164,7 +164,7 @@ const Booking = () => {
         </button>
       </div>
       <div className=" bg-gray-200  mt-3 p-2 rounded-2xl">
-        <p className=" text-xs  font-medium flex items-center gap-2 mb-2">
+        <p className=" text-xs lg:text-sm font-medium flex items-center gap-2 mb-2">
           <span className="flex gap-1 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +224,7 @@ const Booking = () => {
           </span>
         </p>
 
-        <p className=" text-xs flex items-center font-medium gap-2">
+        <p className=" text-xs lg:text-sm flex items-center font-medium gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -244,7 +244,9 @@ const Booking = () => {
       </div>
       <div className=" my-2">
         <h2 className=" font-medium">Description</h2>
-        <p className=" text-sm text-gray-700">{booking.place.description}</p>
+        <p className=" text-sm lg:text-base text-gray-700">
+          {booking.place.description}
+        </p>
       </div>
       {/* <h1 className=" text-gray-700">
         <span className=" font-semibold text-black">

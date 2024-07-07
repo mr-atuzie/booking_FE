@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { USDollar, shortenText } from "../utils";
+import Loader from "../components/Loader";
 
 const IndexPage = () => {
   const [places, setPlaces] = useState([]);
@@ -37,7 +38,7 @@ const IndexPage = () => {
   };
 
   if (loading) {
-    return "Loading...";
+    return <Loader />;
   }
 
   return (
@@ -104,18 +105,18 @@ const IndexPage = () => {
                     />
                   )}
                 </div>
-                <h2 className="text-sm capitalize truncate font-medium leading-4 ">
+                <h2 className="text-sm lg:text-base capitalize truncate font-medium ">
                   {shortenText(place.title, 35)}
                 </h2>
-                <p className=" text-xs  text-gray-700 my-0.5   capitalize  ">
+                <p className=" text-xs lg:text-sm  text-gray-800 my-0.5 lg:my-0     capitalize  ">
                   {place.address}
                 </p>
-                <div className=" text-xs  ">
+                <p className=" text-xs lg:text-sm lg:font-medium  ">
                   <span className=" font-medium text-black">
                     ${USDollar.format(place.price)}
                   </span>{" "}
                   per night
-                </div>
+                </p>
               </Link>
             );
           })}

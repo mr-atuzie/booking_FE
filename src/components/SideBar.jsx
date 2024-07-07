@@ -26,7 +26,7 @@ const SideBar = () => {
     }
   };
   return (
-    <div className=" fixed min-h-full  left-0 shadow-sm hidden p-8 lg:flex  flex-col  lg:w-[20%]">
+    <div className=" fixed min-h-full  left-0 shadow-lg hidden p-8 lg:flex  flex-col  lg:w-[20%]">
       <div className=" flex gap-8 flex-col ">
         <NavLink
           to="/"
@@ -74,7 +74,7 @@ const SideBar = () => {
                 />
               </svg>
             </span>
-            <p>Add</p>
+            <p>Add Property</p>
           </div>
         </NavLink>
 

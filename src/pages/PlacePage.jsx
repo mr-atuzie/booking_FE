@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import BookingForm from "../components/BookingForm";
+import Loader from "../components/Loader";
 
 const PlacePage = () => {
   const [place, setPlace] = useState(null);
@@ -30,7 +31,7 @@ const PlacePage = () => {
   }, [id]);
 
   if (!place) {
-    return "Loading...";
+    return <Loader />;
   }
 
   if (showAllPhotos) {
@@ -74,7 +75,7 @@ const PlacePage = () => {
   }
 
   return (
-    <div className="mt-4 mb-32 lg:mt-8 lg:w-[65%] lg:mx-auto">
+    <div className="mt-4 mb-32 lg:shadow-lg lg:rounded-xl lg:mt-8  lg:bg-white lg:p-8 lg:w-[75%] lg:mx-auto">
       <h1 className="text-lg leading-5 font-medium lg:text-2xl">
         {place?.title}
       </h1>
@@ -165,7 +166,9 @@ const PlacePage = () => {
       </div>
       <div className=" my-3">
         <h2 className=" font-medium">Description</h2>
-        <p className=" text-sm text-gray-700">{place.description}</p>
+        <p className=" text-sm lg:text-base text-gray-700">
+          {place.description}
+        </p>
       </div>
       <div className=" grid gap-2  lg:grid-cols-2">
         {/* <div className=" text-sm">

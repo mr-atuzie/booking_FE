@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { differenceInCalendarDays, format } from "date-fns";
 import { USDollar } from "../utils";
+import Loader from "../components/Loader";
 
 const BookingsPage = () => {
   const { user, ready } = useContext(UserContext);
@@ -36,7 +37,7 @@ const BookingsPage = () => {
   }, []);
 
   if (loading) {
-    return "Loading...";
+    return <Loader />;
   }
 
   if (ready && !user) {
@@ -50,7 +51,7 @@ const BookingsPage = () => {
           return (
             <Link
               to={`/bookings/${booking._id}`}
-              className=" flex gap-2 bg-gray-100 lg:bg-white rounded-2xl lg:w-[75%] shadow-md lg:mx-auto overflow-auto"
+              className=" flex gap-2 bg-gray-100 lg:bg-white rounded-2xl lg:w-[60%] shadow-md lg:mx-auto overflow-auto"
               key={booking._id}
             >
               <div className=" w-28 lg:w-32">
@@ -62,12 +63,16 @@ const BookingsPage = () => {
                   />
                 )}
               </div>
-              <div className=" py-2">
+              <div className=" py-2 flex gap-2 flex-col justify-center">
                 <h2 className=" font-medium leading-3 truncate text-sm lg:text-base">
                   {booking.place.title}
                 </h2>
 
-                <p className=" text-xs lg:text-sm flex items-center gap-1 my-1.5 font-medium">
+                {/* <p className=" text-xs lg:text-sm flex items-center gap-1  font-medium">
+                  {shortenText(booking.place.description, 25)}
+                </p> */}
+
+                <p className=" text-xs lg:text-sm flex items-center gap-1  font-medium">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -88,7 +93,7 @@ const BookingsPage = () => {
                   )}{" "}
                   nights
                 </p>
-                <p className=" text-xs lg:text-sm flex items-center font-medium gap-2 my-1.5">
+                <p className=" text-xs lg:text-sm flex items-center font-medium gap-2 ">
                   <span className="flex gap-1 items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
