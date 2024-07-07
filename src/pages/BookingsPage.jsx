@@ -51,7 +51,7 @@ const BookingsPage = () => {
           return (
             <Link
               to={`/bookings/${booking._id}`}
-              className=" flex gap-2 bg-gray-100 mb-3 lg:bg-white rounded-2xl lg:w-[60%] lg:shadow-md lg:mx-auto overflow-auto"
+              className=" flex gap-2 bg-gray-100  lg:bg-white rounded-2xl lg:w-[60%] lg:shadow-md lg:mx-auto overflow-auto"
               key={booking._id}
             >
               <div className=" w-28 lg:w-32">
