@@ -49,12 +49,12 @@ const Account = () => {
     <div className=" min-h-screen">
       <AccountNav />
 
-      <div className="  lg:bg-white lg:shadow-lg lg:p-8 lg:rounded-xl lg:max-w-lg mx-auto">
+      <div className="  bg-white shadow-lg lg:p-8 rounded-xl lg:max-w-lg mx-auto">
         <h1 className=" font-medium text-sm lg:text-base">
-          Name: <span className=" text-gray-700">{user?.name}</span>
+          Name: <span className=" capitalize ">{user?.name}</span>
         </h1>
         <p className=" font-medium text-sm lg:text-base">
-          Email: <span className=" text-gray-700">{user?.email}</span>
+          Email: <span className=" ">{user?.email}</span>
         </p>
 
         <div className=" flex justify-center items-center my-8">

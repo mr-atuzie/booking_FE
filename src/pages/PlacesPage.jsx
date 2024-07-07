@@ -83,7 +83,7 @@ const PlacesPage = () => {
                 </div>
 
                 <div className=" p-2 grow-0 shrink">
-                  <h2 className=" font-medium leading-4 capitalize text-sm lg:text-base">
+                  <h2 className=" font-medium leading-4 truncate capitalize text-sm lg:text-base">
                     {place.title}
                   </h2>
                   <p className=" text-xs  mt-1 lg:hidden">
