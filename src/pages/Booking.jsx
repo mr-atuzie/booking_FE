@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import { USDollar } from "../utils";
+import Loader from "../components/Loader";
 
 const Booking = () => {
   const { id } = useParams();
@@ -70,7 +71,7 @@ const Booking = () => {
   }
 
   if (!booking) {
-    return "Loading...";
+    return <Loader />;
   }
 
   return (
@@ -163,7 +164,7 @@ const Booking = () => {
           Show more photos
         </button>
       </div>
-      <div className=" bg-gray-200  mt-3 p-2 rounded-2xl">
+      <div className=" bg-gray-100  mt-3 p-2 rounded-2xl">
         <p className=" text-xs lg:text-sm font-medium flex items-center gap-2 mb-2">
           <span className="flex gap-1 items-center">
             <svg

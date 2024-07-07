@@ -99,7 +99,7 @@ const SideBar = () => {
                 />
               </svg>
             </span>
-            <p>Bookings</p>
+            <p>My Bookings</p>
           </div>
         </NavLink>
 

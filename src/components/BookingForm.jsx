@@ -49,7 +49,7 @@ const BookingForm = ({ place }) => {
       console.log(data);
       setLoading(false);
       const bookingId = data._id;
-      setRedirect(`/booking/${bookingId}`);
+      setRedirect(`/bookings/${bookingId}`);
     } catch (error) {
       setLoading(false);
       const message =
@@ -70,7 +70,7 @@ const BookingForm = ({ place }) => {
   return (
     <>
       {loading && <Loader />}
-      <form onSubmit={handleSubmit}>
+      <form className=" lg:w-[60%]" onSubmit={handleSubmit}>
         <h1 className="  text-center lg:text-start text-gray-500">
           <span className=" font-semibold text-black">
             Price: ${place.price}
@@ -79,10 +79,12 @@ const BookingForm = ({ place }) => {
         </h1>
         <div className=" border-2 rounded-2xl  mt-4">
           <div className=" flex gap-2  items-center">
-            <div className=" w-[50%] p-2">
-              <label className=" text-xs font-medium">Check in:</label>
+            <div className=" w-[50%] p-2 ">
+              <label className=" text-xs lg:text-sm font-medium">
+                Check in:
+              </label>
               <input
-                className="  text-xs w-full"
+                className="  text-xs lg:text-sm w-full"
                 type="date"
                 value={checkIn}
                 onChange={(ev) => setCheckIn(ev.target.value)}
@@ -91,9 +93,11 @@ const BookingForm = ({ place }) => {
             </div>
 
             <div className="  w-[50%]  border-l-2 p-2">
-              <label className="text-xs font-medium">Check out:</label>
+              <label className="text-xs lg:text-sm font-medium">
+                Check out:
+              </label>
               <input
-                className=" text-xs w-full"
+                className=" text-xs lg:text-sm w-full"
                 type="date"
                 value={checkOut}
                 onChange={(ev) => setCheckOut(ev.target.value)}
@@ -103,9 +107,11 @@ const BookingForm = ({ place }) => {
           </div>
 
           <div className=" p-2  border-t-2">
-            <label className=" text-xs font-medium">Number of guests</label>
+            <label className=" text-xs lg:text-sm font-medium">
+              Number of guests
+            </label>
             <input
-              className=" text-xs "
+              className=" text-xs lg:text-sm "
               type="number"
               value={maxGuests}
               onChange={(ev) => setMaxGuests(ev.target.value)}
@@ -115,9 +121,11 @@ const BookingForm = ({ place }) => {
           {numberOfDays > 0 && (
             <div>
               <div className=" px-2  ">
-                <label className=" text-xs font-medium">Your Fullname</label>
+                <label className=" text-xs lg:text-sm font-medium">
+                  Your Fullname
+                </label>
                 <input
-                  className=" text-xs bg-gray-200"
+                  className=" text-xs lg:text-sm bg-gray-200"
                   type="text"
                   value={name}
                   onChange={(ev) => setName(ev.target.value)}
@@ -125,9 +133,11 @@ const BookingForm = ({ place }) => {
               </div>
 
               <div className="  px-2  mb-2 ">
-                <label className=" text-xs font-medium">Phone Number</label>
+                <label className=" text-xs lg:text-sm font-medium">
+                  Phone Number
+                </label>
                 <input
-                  className=" text-xs bg-gray-200"
+                  className=" text-xs lg:text-sm bg-gray-200"
                   type="text"
                   value={mobile}
                   onChange={(ev) => setMobile(ev.target.value)}
@@ -137,7 +147,7 @@ const BookingForm = ({ place }) => {
           )}
         </div>
 
-        <button type="submit" className="primary text-sm mt-4">
+        <button type="submit" className="primary text-sm lg:text-base mt-4">
           Book
           {numberOfDays > 0 && (
             <span>

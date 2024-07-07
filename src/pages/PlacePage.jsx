@@ -170,18 +170,8 @@ const PlacePage = () => {
           {place.description}
         </p>
       </div>
-      <div className=" grid gap-2  lg:grid-cols-2">
-        {/* <div className=" text-sm">
-          <span className=" font-medium">Check in:</span> {place.checkIn} AM
-          <br />
-          <span className=" font-medium">Check out:</span> {place.checkOut} PM
-          <br />
-          
-          <span className=" font-medium">Max number of guests:</span>{" "}
-          {place.maxGuests}
-        </div> */}
-        <BookingForm place={place} />
-      </div>
+      <BookingForm place={place} />
+      {/* <div className=" grid gap-2  lg:grid-cols-2"></div> */}
     </div>
   );
 };
