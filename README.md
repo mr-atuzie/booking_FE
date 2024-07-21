@@ -4,9 +4,9 @@ This project is a full-stack booking application built with the MERN stack (Mong
 ## Features
 - User authentication and authorization
 - Upload Property with images
-- Update proprty 
+- Update property 
 - Automatic calculation of stay duration and total price based on check-in and check-out dates
-- Book proprety
+- Book property
 
 ## Technologies Used
 ### Frontend 
