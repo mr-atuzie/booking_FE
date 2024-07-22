@@ -1,4 +1,13 @@
-## Nation property - Booking App - Server sider
+## Table of Contents
+- Introduction
+- Features
+- Technologies Used.
+- Installation
+- Environment Variables
+- Contributing
+- Author
+
+## Nation property - Property Booking App - User Interface
 This project is a full-stack booking application built with the MERN stack (MongoDB, Express, React, Node.js), inspired by Airbnb. Users can upload and list their properties, search for accommodations, and book stays. The app features automatic calculation of stay duration and pricing to ensure a seamless booking experience for both hosts and guest
 
 ## Features
