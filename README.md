@@ -11,11 +11,11 @@
 This project is a full-stack booking application built with the MERN stack (MongoDB, Express, React, Node.js), inspired by Airbnb. Users can upload and list their properties, search for accommodations, and book stays. The app features automatic calculation of stay duration and pricing to ensure a seamless booking experience for both hosts and guest
 
 ## Features
-- User authentication and authorization
-- Upload Property with images
-- Update property 
-- Automatic calculation of stay duration and total price based on check-in and check-out dates
-- Book property
+- **User Authentication:** Secure user login and registration with JWT-based authentication.
+- **Property Management:** Add, update, and delete products with detailed descriptions, images, and prices.
+- **Book Property:** Automatic calculation of stay duration and total price based on check-in and check-out dates.
+- **Search and Filter:** Search for products and filter by categories, price, and ratings.
+- **Responsive Design:** Fully responsive design ensuring a smooth experience on both desktop and mobile devices.
 
 ## Technologies Used
 ### Frontend 
